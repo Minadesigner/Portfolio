@@ -1181,33 +1181,21 @@
         <p style="font-size:17px; color:var(--gray-500); line-height:1.8; max-width:680px;">Before redesigning anything, I needed to understand what the dashboard was actually being used for — and what users were working around. I combined behavioral data, session analysis, and competitor research to build a clear picture.</p>
       </div>
 
-      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; margin-bottom:64px;">
+      <div style="display:flex; flex-direction:column; gap:0; margin-bottom:64px; border:1px solid var(--gray-200); border-radius:16px; overflow:hidden;">
 
-        <div style="border:1px solid var(--gray-200); border-radius:16px; padding:32px 28px; background:var(--white);">
-          <div style="width:40px; height:40px; background:var(--orange-50); border:1px solid var(--orange-200); border-radius:10px; display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
-            <svg width="20" height="20" fill="none" stroke="var(--orange-500)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-          </div>
-          <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--orange-700); margin-bottom:12px;">Session Recordings</div>
-          <div style="font-size:15px; font-weight:700; color:var(--gray-900); margin-bottom:12px; line-height:1.4;">Users skipped the dashboard and went straight to the Companies table</div>
-          <div style="font-size:14px; color:var(--gray-500); line-height:1.7;">Session recordings showed users briefly scanning the dashboard, then navigating directly to supplier lists and issue pages. They were cross-referencing suppliers, CVEs, and certificates — but the dashboard wasn't helping them do that.</div>
+        <div style="display:grid; grid-template-columns:180px 1fr; gap:24px; padding:24px 32px; border-bottom:1px solid var(--gray-100); align-items:center;">
+          <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--orange-700);">Session Recordings</div>
+          <div style="font-size:15px; color:var(--gray-700); line-height:1.6;">Users skipped the dashboard entirely — going straight to the Companies table to find what they needed.</div>
         </div>
 
-        <div style="border:1px solid var(--gray-200); border-radius:16px; padding:32px 28px; background:var(--white);">
-          <div style="width:40px; height:40px; background:var(--orange-50); border:1px solid var(--orange-200); border-radius:10px; display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
-            <svg width="20" height="20" fill="none" stroke="var(--orange-500)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          </div>
-          <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--orange-700); margin-bottom:12px;">Behavioral Pattern</div>
-          <div style="font-size:15px; font-weight:700; color:var(--gray-900); margin-bottom:12px; line-height:1.4;">Users are goal-oriented — they execute actions, they don't explore insights</div>
-          <div style="font-size:14px; color:var(--gray-500); line-height:1.7;">Click maps and scroll depth confirmed that visual widgets had almost no engagement. Users came to the platform with a specific task in mind. The dashboard's job was not to inform — it was to get them to the right place fast.</div>
+        <div style="display:grid; grid-template-columns:180px 1fr; gap:24px; padding:24px 32px; border-bottom:1px solid var(--gray-100); align-items:center;">
+          <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--orange-700);">Behavioral Pattern</div>
+          <div style="font-size:15px; color:var(--gray-700); line-height:1.6;">Users are goal-oriented. They execute specific tasks — they don't browse or explore.</div>
         </div>
 
-        <div style="border:1px solid var(--gray-200); border-radius:16px; padding:32px 28px; background:var(--white);">
-          <div style="width:40px; height:40px; background:var(--orange-50); border:1px solid var(--orange-200); border-radius:10px; display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
-            <svg width="20" height="20" fill="none" stroke="var(--orange-500)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          </div>
-          <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--orange-700); margin-bottom:12px;">Competitor Analysis</div>
-          <div style="font-size:15px; font-weight:700; color:var(--gray-900); margin-bottom:12px; line-height:1.4;">The strongest TPRM dashboards act as launchers, not posters</div>
-          <div style="font-size:14px; color:var(--gray-500); line-height:1.7;">Across Panorays, OneTrust, SecurityScorecard and UpGuard, the most effective pattern was every widget being clickable and landing users in a filtered, actionable list. Data display alone was not enough — drilldowns were what made dashboards useful.</div>
+        <div style="display:grid; grid-template-columns:180px 1fr; gap:24px; padding:24px 32px; align-items:center;">
+          <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--orange-700);">Competitor Analysis</div>
+          <div style="font-size:15px; color:var(--gray-700); line-height:1.6;">The best TPRM dashboards (Panorays, OneTrust, SecurityScorecard) act as launchers — every widget leads somewhere actionable.</div>
         </div>
 
       </div>
