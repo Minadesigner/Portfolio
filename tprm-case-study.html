@@ -1181,41 +1181,31 @@
         <p style="font-size:17px; color:var(--gray-500); line-height:1.8; max-width:680px;">Before redesigning anything, I needed to understand what the dashboard was actually being used for — and what users were working around. I combined behavioral data, session analysis, and competitor research to build a clear picture.</p>
       </div>
 
-      <div style="display:flex; flex-direction:column; gap:0; margin-bottom:64px; border:1px solid var(--gray-200); border-radius:16px; overflow:hidden;">
+      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; margin-bottom:48px;">
 
-        <div style="display:grid; grid-template-columns:180px 1fr; gap:24px; padding:24px 32px; border-bottom:1px solid var(--gray-100); align-items:center;">
-          <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--orange-700);">Session Recordings</div>
-          <div style="font-size:15px; color:var(--gray-700); line-height:1.6;">Users skipped the dashboard entirely — going straight to the Companies table to find what they needed.</div>
+        <div style="padding:28px 24px; border:1px solid var(--gray-200); border-radius:14px; background:var(--white);">
+          <div style="font-size:24px; font-weight:800; color:var(--orange-500); margin-bottom:12px; letter-spacing:-0.02em;">01</div>
+          <div style="font-size:15px; font-weight:700; color:var(--gray-900); margin-bottom:8px; line-height:1.4;">Users bypassed the dashboard entirely</div>
+          <div style="font-size:13px; color:var(--gray-500); line-height:1.6;">Session recordings showed users going straight to the Companies table — the dashboard was not part of their workflow.</div>
         </div>
 
-        <div style="display:grid; grid-template-columns:180px 1fr; gap:24px; padding:24px 32px; border-bottom:1px solid var(--gray-100); align-items:center;">
-          <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--orange-700);">Behavioral Pattern</div>
-          <div style="font-size:15px; color:var(--gray-700); line-height:1.6;">Users are goal-oriented. They execute specific tasks — they don't browse or explore.</div>
+        <div style="padding:28px 24px; border:1px solid var(--gray-200); border-radius:14px; background:var(--white);">
+          <div style="font-size:24px; font-weight:800; color:var(--orange-500); margin-bottom:12px; letter-spacing:-0.02em;">02</div>
+          <div style="font-size:15px; font-weight:700; color:var(--gray-900); margin-bottom:8px; line-height:1.4;">Goal-oriented users execute — they don't explore</div>
+          <div style="font-size:13px; color:var(--gray-500); line-height:1.6;">Click maps confirmed widgets had near-zero engagement. Users arrived with a task. The dashboard needed to route them, not inform them.</div>
         </div>
 
-        <div style="display:grid; grid-template-columns:180px 1fr; gap:24px; padding:24px 32px; align-items:center;">
-          <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--orange-700);">Competitor Analysis</div>
-          <div style="font-size:15px; color:var(--gray-700); line-height:1.6;">The best TPRM dashboards (Panorays, OneTrust, SecurityScorecard) act as launchers — every widget leads somewhere actionable.</div>
+        <div style="padding:28px 24px; border:1px solid var(--gray-200); border-radius:14px; background:var(--white);">
+          <div style="font-size:24px; font-weight:800; color:var(--orange-500); margin-bottom:12px; letter-spacing:-0.02em;">03</div>
+          <div style="font-size:15px; font-weight:700; color:var(--gray-900); margin-bottom:8px; line-height:1.4;">Best-in-class dashboards are launchers, not posters</div>
+          <div style="font-size:13px; color:var(--gray-500); line-height:1.6;">Across Panorays, OneTrust and SecurityScorecard — every widget led somewhere actionable. Data without a path forward is noise.</div>
         </div>
 
       </div>
 
-      <div style="background:var(--gray-50); border:1px solid var(--gray-200); border-radius:16px; padding:40px 48px; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;">
-        <div>
-          <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--gray-400); margin-bottom:16px;">Key Finding</div>
-          <p style="font-size:20px; font-weight:700; color:var(--gray-900); line-height:1.4; margin-bottom:16px;">"The dashboard was visible — but not functioning as a decision surface."</p>
-          <p style="font-size:14px; color:var(--gray-500); line-height:1.7;">Users had three core questions when they opened the platform: <em>Who do I need to act on? Where are we exposed? What's trending that needs attention?</em> The old dashboard answered none of them directly.</p>
-        </div>
-        <div>
-          <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--gray-400); margin-bottom:20px;">What this meant for the design</div>
-          <div style="display:flex; flex-direction:column; gap:14px;">
-            <div style="display:flex; gap:14px; align-items:flex-start;"><span style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:6px;"></span><span style="font-size:14px; color:var(--gray-600); line-height:1.6;">Stop designing for exploration — design for orientation and action</span></div>
-            <div style="display:flex; gap:14px; align-items:flex-start;"><span style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:6px;"></span><span style="font-size:14px; color:var(--gray-600); line-height:1.6;">Every signal on the dashboard needs a clear drilldown path</span></div>
-            <div style="display:flex; gap:14px; align-items:flex-start;"><span style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:6px;"></span><span style="font-size:14px; color:var(--gray-600); line-height:1.6;">Make "unknown" and "unassessed" suppliers the most visible call to action</span></div>
-            <div style="display:flex; gap:14px; align-items:flex-start;"><span style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:6px;"></span><span style="font-size:14px; color:var(--gray-600); line-height:1.6;">Separate risk signals from TPRM workflow — don't mix them into one confusing view</span></div>
-          </div>
-        </div>
-      </div>
+      <blockquote style="border-left:3px solid var(--orange-500); padding:20px 28px; margin:0; background:var(--orange-50); border-radius:0 12px 12px 0;">
+        <p style="font-size:17px; font-weight:700; color:var(--gray-900); line-height:1.5; margin:0;">"The dashboard was visible — but it wasn't part of anyone's decision process. The redesign needed to change that."</p>
+      </blockquote>
 
     </div>
   </section>
