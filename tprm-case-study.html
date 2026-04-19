@@ -1277,97 +1277,66 @@
   <section class="cs-section" id="stage-outcome" style="background:var(--white); padding:80px 0;">
     <div class="container">
 
-      <!-- BLOCK 1 — Header -->
       <div style="max-width:760px; margin-bottom:48px;">
         <div class="section-label" style="margin-bottom:16px;">Outcome</div>
-        <h2 class="section-title" style="margin-bottom:24px;">From static data to signals that drive action</h2>
-        <p style="font-size:17px; color:var(--gray-500); line-height:1.8; max-width:680px;">After launch, Hotjar data confirmed the dashboard works as a control layer &mdash; users engage first with top-level signals and move more predictably into deeper analysis when sections contain meaningful data.</p>
+        <h2 class="section-title" style="margin-bottom:16px;">Early signals confirm the hierarchy is working</h2>
+        <p style="font-size:13px; color:var(--gray-400); line-height:1.8; border-left:2px solid var(--gray-200); padding-left:16px;">First 6 weeks post-launch &middot; March 1 &ndash; April 18, 2026 &middot; 243 sessions &middot; Early signals only &mdash; too soon for longitudinal conclusions.</p>
       </div>
 
-      <!-- BLOCK 2 — Two columns: observations + heatmap -->
-      <div style="display:grid; grid-template-columns:55fr 45fr; gap:64px; align-items:start; margin-bottom:64px;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:start;">
 
-        <!-- LEFT COLUMN — What we observed -->
-        <div>
-          <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--gray-400); margin-bottom:20px;">What we observed</div>
+        <!-- LEFT — Cards -->
+        <div style="display:flex; flex-direction:column; gap:0;">
 
-          <div style="display:flex; flex-direction:column; gap:0;">
-
-            <!-- Observation 1 -->
-            <div style="padding:16px 0; border-bottom:1px solid var(--gray-200); display:flex; gap:20px; align-items:flex-start;">
-              <span style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:var(--orange-500); min-width:24px; padding-top:2px;">01</span>
-              <div>
-                <div style="font-size:15px; font-weight:700; color:var(--gray-900); margin-bottom:4px; line-height:1.4;">Faster orientation</div>
-                <div style="font-size:14px; color:var(--gray-500); line-height:1.6;">Users focus first on top-level KPIs to understand overall program posture.</div>
-              </div>
+          <div style="display:grid; grid-template-columns:80px 1fr; gap:20px; align-items:start; padding:22px 20px; border:0.5px solid var(--gray-200); border-radius:12px 12px 0 0; background:var(--white);">
+            <div style="text-align:center; padding-top:2px;">
+              <div style="font-size:28px; font-weight:700; color:var(--orange-500); line-height:1; margin-bottom:4px; letter-spacing:-0.02em;">85%</div>
+              <div style="font-size:9px; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; color:var(--gray-400); line-height:1.3;">avg scroll depth</div>
             </div>
-
-            <!-- Observation 2 -->
-            <div style="padding:16px 0; border-bottom:1px solid var(--gray-200); display:flex; gap:20px; align-items:flex-start;">
-              <span style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:var(--orange-500); min-width:24px; padding-top:2px;">02</span>
-              <div>
-                <div style="font-size:15px; font-weight:700; color:var(--gray-900); margin-bottom:4px; line-height:1.4;">Clearer exploration</div>
-                <div style="font-size:14px; color:var(--gray-500); line-height:1.6;">Clicks cluster around key signals and intended entry points.</div>
-              </div>
-            </div>
-
-            <!-- Observation 3 -->
-            <div style="padding:16px 0; border-bottom:1px solid var(--gray-200); display:flex; gap:20px; align-items:flex-start;">
-              <span style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:var(--orange-500); min-width:24px; padding-top:2px;">03</span>
-              <div>
-                <div style="margin-bottom:4px; line-height:1.4;">
-                  <span style="font-size:15px; font-weight:700; color:var(--gray-900);">Progressive exploration</span>
-                  <span style="font-size:11px; font-weight:600; color:var(--gray-400); margin-left:8px;">(data-dependent)</span>
-                </div>
-                <div style="font-size:14px; color:var(--gray-500); line-height:1.6;">When data is available, users move from summary signals into deeper content and module links.</div>
-              </div>
+            <div>
+              <div style="font-size:13px; font-weight:600; color:var(--gray-900); line-height:1.4; margin-bottom:6px;">Users engage deeply into the dashboard</div>
+              <div style="font-size:12px; color:var(--gray-500); line-height:1.6;">Across 243 sessions, users scroll well past the fold — the dashboard is functioning as a launchpad, not a dead end.</div>
             </div>
           </div>
 
-          <!-- System insight — mirrors "What we observed" structure -->
-          <div style="margin-top:32px;">
-            <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--gray-400); margin-bottom:20px;">System insight</div>
-            <div style="padding:16px 0; border-top:1px solid var(--gray-200); border-bottom:1px solid var(--gray-200); display:flex; gap:20px; align-items:flex-start;">
-              <span style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:var(--orange-500); min-width:24px; padding-top:2px;">&#9679;</span>
-              <div style="font-size:14px; color:var(--gray-600); line-height:1.7;">Engagement concentrates where <strong style="color:var(--gray-900);">signal strength is highest</strong>. Sections dependent on <strong style="color:var(--gray-900);">supplier input</strong> show lower interaction when data is unavailable &mdash; highlighting the importance of clear empty and in-progress states.</div>
+          <div style="display:grid; grid-template-columns:80px 1fr; gap:20px; align-items:start; padding:22px 20px; border:0.5px solid var(--gray-200); border-top:none; background:var(--white);">
+            <div style="text-align:center; padding-top:2px;">
+              <div style="font-size:28px; font-weight:700; color:var(--orange-500); line-height:1; margin-bottom:4px; letter-spacing:-0.02em;">0%</div>
+              <div style="font-size:9px; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; color:var(--gray-400); line-height:1.3;">rage clicks</div>
+            </div>
+            <div>
+              <div style="font-size:13px; font-weight:600; color:var(--gray-900); line-height:1.4; margin-bottom:6px;">No frustration signals detected</div>
+              <div style="font-size:12px; color:var(--gray-500); line-height:1.6;">Zero rage clicks across all sessions. Dead clicks at 3.7% — users know what is interactive and where it leads.</div>
             </div>
           </div>
-        </div>
 
-        <!-- RIGHT COLUMN — Heatmap framed to match Solution section -->
-        <div style="background:var(--gray-50); border-radius:16px; border:1px solid var(--gray-200); padding:32px; box-shadow:0 8px 40px -8px rgba(0,0,0,0.10);">
-          <div style="border-radius:8px; overflow:hidden; border:1px solid var(--gray-200);">
-            <img src="FRAME 8.jpg" alt="Hotjar heatmap showing user engagement" style="width:100%; display:block;">
-          </div>
-          <p style="font-size:13px; color:var(--gray-400); text-align:center; margin-top:16px; line-height:1.5;">Hotjar heatmap &mdash; engagement concentrates around top-level signals.</p>
-        </div>
-
-      </div>
-
-      <!-- BLOCK 4 — Impact (3 cards in a row) -->
-      <div>
-        <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--gray-400); margin-bottom:20px;">Impact</div>
-        <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;">
-
-          <div style="background:var(--white); border:1px solid var(--gray-200); border-radius:12px; padding:28px 24px;">
-            <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:var(--orange-500); margin-bottom:16px;">01</div>
-            <div style="font-size:15px; color:var(--gray-700); line-height:1.55; font-weight:700; margin-bottom:8px;">Users engage with the dashboard as intended</div>
-            <div style="font-size:13px; color:var(--gray-500); line-height:1.6;">Hotjar confirmed clicks concentrate around top-level signals — the entry point is now functioning as a decision surface, not a passage.</div>
+          <div style="display:grid; grid-template-columns:80px 1fr; gap:20px; align-items:start; padding:22px 20px; border:0.5px solid var(--gray-200); border-top:none; border-radius:0 0 12px 12px; background:var(--white);">
+            <div style="text-align:center; padding-top:2px;">
+              <div style="font-size:22px; font-weight:700; color:var(--orange-500); line-height:1; margin-bottom:4px;">&#10003;</div>
+              <div style="font-size:9px; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; color:var(--gray-400); line-height:1.3;">hierarchy confirmed</div>
+            </div>
+            <div>
+              <div style="font-size:13px; font-weight:600; color:var(--gray-900); line-height:1.4; margin-bottom:6px;">Attention follows the designed reading order</div>
+              <div style="font-size:12px; color:var(--gray-500); line-height:1.6;">Heatmap shows maximum attention on compliance KPIs at top, moderate on audit and documents, lower on cyber posture — matching the Executive &rarr; Risk Manager &rarr; Analyst hierarchy.</div>
+            </div>
           </div>
 
-          <div style="background:var(--white); border:1px solid var(--gray-200); border-radius:12px; padding:28px 24px;">
-            <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:var(--orange-500); margin-bottom:16px;">02</div>
-            <div style="font-size:15px; color:var(--gray-700); line-height:1.55; font-weight:700; margin-bottom:8px;">Risk signals are visible in the first screen</div>
-            <div style="font-size:13px; color:var(--gray-500); line-height:1.6;">Compliance status, audit progress, urgent tasks and cyber posture are all accessible without scrolling — reducing time to orientation.</div>
-          </div>
-
-          <div style="background:var(--white); border:1px solid var(--gray-200); border-radius:12px; padding:28px 24px;">
-            <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:var(--orange-500); margin-bottom:16px;">03</div>
-            <div style="font-size:15px; color:var(--gray-700); line-height:1.55; font-weight:700; margin-bottom:8px;">Predictable path from signal to action</div>
-            <div style="font-size:13px; color:var(--gray-500); line-height:1.6;">Users with available data move from top-level KPIs into deeper analysis — confirming the hierarchy decision translated into real navigation behavior.</div>
+          <!-- What I would track next -->
+          <div style="margin-top:20px; padding:16px 20px; background:var(--gray-50); border-radius:10px; border:0.5px solid var(--gray-200);">
+            <div style="font-size:11px; font-weight:600; color:var(--gray-700); margin-bottom:6px;">What I would track next</div>
+            <div style="font-size:12px; color:var(--gray-500); line-height:1.7;">Return visit rate &middot; time-to-first-click on KPIs &middot; navigation path from dashboard to module pages.</div>
           </div>
 
         </div>
+
+        <!-- RIGHT — Heatmap -->
+        <div style="background:var(--gray-50); border:0.5px solid var(--gray-200); border-radius:14px; padding:16px;">
+          <div style="border-radius:8px; overflow:hidden; border:0.5px solid var(--gray-200);">
+            <img src="FRAME 8.jpg" alt="Clarity attention heatmap" style="width:100%; display:block;">
+          </div>
+          <p style="font-size:11px; color:var(--gray-400); text-align:center; margin-top:12px; line-height:1.6;">Clarity attention heatmap &middot; March &ndash; April 2026 &middot; 243 sessions<br>Red = high attention &middot; Blue = low attention</p>
+        </div>
+
       </div>
 
     </div>
