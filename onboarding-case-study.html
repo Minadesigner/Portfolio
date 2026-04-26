@@ -586,51 +586,44 @@
       <div class="section-label" style="margin-bottom:16px;">The Problem</div>
       <h2 class="section-title" style="margin-bottom:48px; max-width:760px;">A process built for one supplier — a product that needed hundreds.</h2>
 
-      <!-- Text left, image right -->
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start; margin-bottom:64px;">
-        <div>
-          <p style="font-size:17px; color:var(--gray-500); line-height:1.8; margin-bottom:20px;">Supplier onboarding is the entry point to all TPRM workflows — compliance, audits, and risk monitoring. Yet the experience was designed as a linear, single-entry flow: one supplier, one form, 15+ fields, manually completed every time.</p>
-          <p style="font-size:17px; color:var(--gray-500); line-height:1.8; margin-bottom:20px;">At ~3 minutes per supplier, enterprise teams managing 50–500 vendors were spending entire workdays on repetitive data entry. As volume increased, the system failed to support real workflows — teams began bypassing the product entirely, relying on offline spreadsheets and backend workarounds to complete onboarding.</p>
-          <p style="font-size:15px; color:var(--gray-700); font-weight:500; line-height:1.8; margin-bottom:32px;">The result: the product's core entry point was no longer usable at scale, creating operational bottlenecks, fragmented workflows, and reduced trust in downstream data.</p>
+      <!-- Body paragraphs full width -->
+      <div style="max-width:760px; margin-bottom:48px;">
+        <p style="font-size:17px; color:var(--gray-500); line-height:1.8; margin-bottom:20px;">Supplier onboarding is the entry point to all TPRM workflows — compliance, audits, and risk monitoring. Yet the experience was designed as a linear, single-entry flow: one supplier, one form, 15+ fields, manually completed every time.</p>
+        <p style="font-size:17px; color:var(--gray-500); line-height:1.8; margin-bottom:20px;">At ~3 minutes per supplier, enterprise teams managing 50–500 vendors were spending entire workdays on repetitive data entry. As volume increased, the system failed to support real workflows — teams began bypassing the product entirely, relying on offline spreadsheets and backend workarounds to complete onboarding.</p>
+        <p style="font-size:15px; color:var(--gray-700); font-weight:500; line-height:1.8;">The result: the product's core entry point was no longer usable at scale, creating operational bottlenecks, fragmented workflows, and reduced trust in downstream data.</p>
+      </div>
 
-          <!-- 4 points -->
-          <div style="display:flex; flex-direction:column; gap:20px;">
-            <div style="display:flex; gap:16px; align-items:flex-start;">
-              <span style="font-size:13px; font-weight:800; color:var(--orange-500); min-width:24px; padding-top:2px;">01</span>
-              <div>
-                <div style="font-size:14px; font-weight:700; color:var(--gray-900); margin-bottom:4px;">Manual entry doesn't scale</div>
-                <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Session recordings showed users spending 3–4 minutes per supplier — repeatedly scrolling and hesitating on field requirements in a form with no clear hierarchy. <span style="color:var(--gray-700); font-weight:600;">→ High friction multiplied across hundreds of entries.</span></div>
-              </div>
-            </div>
-            <div style="display:flex; gap:16px; align-items:flex-start;">
-              <span style="font-size:13px; font-weight:800; color:var(--orange-500); min-width:24px; padding-top:2px;">02</span>
-              <div>
-                <div style="font-size:14px; font-weight:700; color:var(--gray-900); margin-bottom:4px;">The system was bypassed entirely</div>
-                <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">No bulk onboarding existed. Teams relied on spreadsheets and backend imports, removing the product from the actual workflow. <span style="color:var(--gray-700); font-weight:600;">→ The system failed as a source of truth.</span></div>
-              </div>
-            </div>
-            <div style="display:flex; gap:16px; align-items:flex-start;">
-              <span style="font-size:13px; font-weight:800; color:var(--orange-500); min-width:24px; padding-top:2px;">03</span>
-              <div>
-                <div style="font-size:14px; font-weight:700; color:var(--gray-900); margin-bottom:4px;">Unclear structure increased cognitive load</div>
-                <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Required and optional fields were not distinguished, leading to hesitation, incomplete entries, and repeated corrections. <span style="color:var(--gray-700); font-weight:600;">→ Slower input and inconsistent data quality.</span></div>
-              </div>
-            </div>
-            <div style="display:flex; gap:16px; align-items:flex-start;">
-              <span style="font-size:13px; font-weight:800; color:var(--orange-500); min-width:24px; padding-top:2px;">04</span>
-              <div>
-                <div style="font-size:14px; font-weight:700; color:var(--gray-900); margin-bottom:4px;">Data issues propagated downstream</div>
-                <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Incorrect or incomplete onboarding data flowed into compliance and audit workflows. <span style="color:var(--gray-700); font-weight:600;">→ Reduced trust in risk assessments and reporting.</span></div>
-              </div>
-            </div>
+      <!-- 4 columns horizontal -->
+      <div style="margin-bottom:40px;">
+        <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--gray-400); margin-bottom:20px;">What wasn't working</div>
+        <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:0;">
+          <div style="padding:20px 24px 24px 0; border-right:1px solid var(--gray-100);">
+            <span style="font-size:28px; font-weight:800; color:var(--orange-500); display:block; line-height:1; margin-bottom:12px; letter-spacing:-0.02em;">01</span>
+            <div style="font-size:15px; font-weight:700; color:var(--gray-900); line-height:1.4; margin-bottom:10px;">Manual entry doesn't scale</div>
+            <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Session recordings showed users spending 3–4 minutes per supplier — scrolling and hesitating on a form with no clear hierarchy.</div>
+          </div>
+          <div style="padding:20px 24px 24px 24px; border-right:1px solid var(--gray-100);">
+            <span style="font-size:28px; font-weight:800; color:var(--orange-500); display:block; line-height:1; margin-bottom:12px; letter-spacing:-0.02em;">02</span>
+            <div style="font-size:15px; font-weight:700; color:var(--gray-900); line-height:1.4; margin-bottom:10px;">The system was bypassed entirely</div>
+            <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">No bulk onboarding existed. Teams relied on spreadsheets and backend imports — removing the product from the actual workflow.</div>
+          </div>
+          <div style="padding:20px 24px 24px 24px; border-right:1px solid var(--gray-100);">
+            <span style="font-size:28px; font-weight:800; color:var(--orange-500); display:block; line-height:1; margin-bottom:12px; letter-spacing:-0.02em;">03</span>
+            <div style="font-size:15px; font-weight:700; color:var(--gray-900); line-height:1.4; margin-bottom:10px;">Unclear structure increased cognitive load</div>
+            <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Required and optional fields were not distinguished — leading to hesitation, incomplete entries, and repeated corrections.</div>
+          </div>
+          <div style="padding:20px 0 24px 24px;">
+            <span style="font-size:28px; font-weight:800; color:var(--orange-500); display:block; line-height:1; margin-bottom:12px; letter-spacing:-0.02em;">04</span>
+            <div style="font-size:15px; font-weight:700; color:var(--gray-900); line-height:1.4; margin-bottom:10px;">Data issues propagated downstream</div>
+            <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Incorrect or incomplete onboarding data flowed into compliance and audit workflows — reducing trust in risk assessments.</div>
           </div>
         </div>
+      </div>
 
-        <!-- Image right -->
-        <div style="background:var(--gray-50); border-radius:16px; border:1px solid var(--gray-200); padding:24px;">
-          <img src="old 5.png" alt="Original manual onboarding form" style="width:100%; border-radius:10px; display:block; box-shadow:0 4px 16px rgba(0,0,0,0.10);">
-          <p style="font-size:12px; color:var(--gray-400); text-align:center; margin-top:12px; line-height:1.5;">The original form — one-by-one entry, no field hierarchy, no bulk support.</p>
-        </div>
+      <!-- Image full width below -->
+      <div style="background:var(--gray-50); border-radius:16px; border:1px solid var(--gray-200); padding:32px;">
+        <img src="old 5.png" alt="Original manual onboarding form" style="width:480px; max-width:100%; border-radius:10px; display:block; margin:0 auto; box-shadow:0 4px 16px rgba(0,0,0,0.10);">
+        <p style="font-size:13px; color:var(--gray-400); text-align:center; margin-top:16px; line-height:1.5;">The original form — one-by-one entry, no field hierarchy, no bulk support.</p>
       </div>
 
 
