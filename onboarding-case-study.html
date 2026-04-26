@@ -769,43 +769,116 @@
   <section id="stage-solution" style="background:var(--white); padding:80px 0;">
     <div class="container">
 
-      <div style="max-width:680px; margin-bottom:48px;">
-        <div class="section-label" style="margin-bottom:20px;">The Solution</div>
-        <h2 style="font-size:26px; font-weight:700; color:var(--gray-900); letter-spacing:-0.02em; margin-bottom:16px;">A guided import flow that meets users where they already work</h2>
-        <p style="font-size:17px; color:var(--gray-500); line-height:1.8; max-width:640px; margin-bottom:0;">Upload a CSV, map columns to system fields, review validated records before committing — each step designed to prevent a specific failure mode and build confidence throughout.</p>
+      <!-- Section header -->
+      <div style="max-width:680px; margin-bottom:72px;">
+        <div class="section-label" style="margin-bottom:16px;">The Solution</div>
+        <h2 class="section-title" style="margin-bottom:20px;">A flexible onboarding system built for two realities</h2>
+        <p style="font-size:17px; color:var(--gray-500); line-height:1.8;">Both flows share the same data model and validation logic — ensuring consistency whether a team onboards one supplier or five hundred.</p>
       </div>
 
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0; margin-bottom:48px;">
-
-        <div style="padding:32px 32px 32px 0; border-right:1px solid var(--gray-200); border-bottom:1px solid var(--gray-200);">
-          <div style="font-size:28px; font-weight:800; color:var(--orange-500); line-height:1; margin-bottom:12px; letter-spacing:-0.02em;">01</div>
-          <div style="font-size:15px; font-weight:700; color:var(--gray-900); line-height:1.4; margin-bottom:10px;">Three-step progressive flow</div>
-          <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Upload, map, review — each step surfaces only what's needed at that moment, reducing cognitive load and preventing errors before they happen.</div>
+      <!-- ── SOLUTION 01 ── -->
+      <div style="margin-bottom:80px;">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:32px;">
+          <span style="font-size:12px; font-weight:800; color:var(--orange-500); letter-spacing:0.08em; text-transform:uppercase;">Solution 01</span>
+          <div style="flex:1; height:1px; background:var(--gray-100);"></div>
         </div>
 
-        <div style="padding:32px 0 32px 32px; border-bottom:1px solid var(--gray-200);">
-          <div style="font-size:28px; font-weight:800; color:var(--orange-500); line-height:1; margin-bottom:12px; letter-spacing:-0.02em;">02</div>
-          <div style="font-size:15px; font-weight:700; color:var(--gray-900); line-height:1.4; margin-bottom:10px;">Intelligent column mapping</div>
-          <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Header matching auto-suggests field mappings with sample data previews — most well-structured CSVs are ready to import in a few clicks.</div>
-        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start;">
+          <!-- Left: text -->
+          <div>
+            <h3 style="font-size:22px; font-weight:700; color:var(--gray-900); letter-spacing:-0.02em; margin-bottom:16px;">Bulk import for large portfolios</h3>
+            <p style="font-size:15px; color:var(--gray-500); line-height:1.8; margin-bottom:28px;">Enterprise teams already manage suppliers in spreadsheets. The solution aligns with this behavior while introducing guardrails to prevent incorrect data ingestion.</p>
 
-        <div style="padding:32px 32px 32px 0; border-right:1px solid var(--gray-200);">
-          <div style="font-size:28px; font-weight:800; color:var(--orange-500); line-height:1; margin-bottom:12px; letter-spacing:-0.02em;">03</div>
-          <div style="font-size:15px; font-weight:700; color:var(--gray-900); line-height:1.4; margin-bottom:10px;">Inline per-row validation</div>
-          <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Errors surface per-field before submission — with clear remediation paths — so bad data never reaches the system.</div>
-        </div>
+            <div style="display:flex; flex-direction:column; gap:16px;">
+              <div style="display:flex; gap:14px; align-items:flex-start;">
+                <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:6px;"></div>
+                <div>
+                  <div style="font-size:13px; font-weight:700; color:var(--gray-800); margin-bottom:3px;">Auto field mapping</div>
+                  <div style="font-size:13px; color:var(--gray-500); line-height:1.6;">Column names are normalised and pre-matched — reducing setup time significantly.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:14px; align-items:flex-start;">
+                <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:6px;"></div>
+                <div>
+                  <div style="font-size:13px; font-weight:700; color:var(--gray-800); margin-bottom:3px;">Required field gating</div>
+                  <div style="font-size:13px; color:var(--gray-500); line-height:1.6;">Users cannot proceed without mapping critical fields — name and domain must be confirmed.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:14px; align-items:flex-start;">
+                <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:6px;"></div>
+                <div>
+                  <div style="font-size:13px; font-weight:700; color:var(--gray-800); margin-bottom:3px;">Validation before creation</div>
+                  <div style="font-size:13px; color:var(--gray-500); line-height:1.6;">Errors are flagged per row before import — incorrect domains and missing data must be resolved first.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:14px; align-items:flex-start;">
+                <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:6px;"></div>
+                <div>
+                  <div style="font-size:13px; font-weight:700; color:var(--gray-800); margin-bottom:3px;">Re-upload instead of inline editing</div>
+                  <div style="font-size:13px; color:var(--gray-500); line-height:1.6;">CSV errors are usually systemic — fixing the file and re-uploading is faster than editing row by row.</div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <div style="padding:32px 0 32px 32px;">
-          <div style="font-size:28px; font-weight:800; color:var(--orange-500); line-height:1; margin-bottom:12px; letter-spacing:-0.02em;">04</div>
-          <div style="font-size:15px; font-weight:700; color:var(--gray-900); line-height:1.4; margin-bottom:10px;">Saved mapping templates</div>
-          <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Teams with recurring imports can save column configurations and reuse them — turning a 3-minute task into a 30-second one.</div>
+          <!-- Right: image -->
+          <div style="background:var(--gray-50); border:1px solid var(--gray-200); border-radius:16px; padding:24px;">
+            <img src="Import suppliers from CSV-Map fields.png" alt="Bulk import flow" style="width:100%; border-radius:10px; display:block; box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+            <p style="font-size:12px; color:var(--gray-400); text-align:center; margin-top:12px;">CSV upload → field mapping → validation → import</p>
+          </div>
         </div>
-
       </div>
 
-      <div style="background:var(--gray-50); border-radius:16px; border:1px solid var(--gray-200); padding:32px; box-shadow:0 8px 40px -8px rgba(0,0,0,0.10);">
-        <div class="cs-screenshot-placeholder">
-          <span>Screenshot placeholder — Annotated import flow overview</span>
+      <!-- ── SOLUTION 02 ── -->
+      <div>
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:32px;">
+          <span style="font-size:12px; font-weight:800; color:var(--orange-500); letter-spacing:0.08em; text-transform:uppercase;">Solution 02</span>
+          <div style="flex:1; height:1px; background:var(--gray-100);"></div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start;">
+          <!-- Left: image -->
+          <div style="background:var(--gray-50); border:1px solid var(--gray-200); border-radius:16px; padding:24px;">
+            <img src="Add a supplier.png" alt="Single supplier flow" style="width:100%; border-radius:10px; display:block; box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+            <p style="font-size:12px; color:var(--gray-400); text-align:center; margin-top:12px;">Name search → auto-suggest → domain validation → structured fields</p>
+          </div>
+
+          <!-- Right: text -->
+          <div>
+            <h3 style="font-size:22px; font-weight:700; color:var(--gray-900); letter-spacing:-0.02em; margin-bottom:16px;">Simplified single-supplier flow</h3>
+            <p style="font-size:15px; color:var(--gray-500); line-height:1.8; margin-bottom:28px;">For everyday use — redesigned to reduce friction and improve accuracy from the first step.</p>
+
+            <div style="display:flex; flex-direction:column; gap:16px;">
+              <div style="display:flex; gap:14px; align-items:flex-start;">
+                <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:6px;"></div>
+                <div>
+                  <div style="font-size:13px; font-weight:700; color:var(--gray-800); margin-bottom:3px;">Start with just a name</div>
+                  <div style="font-size:13px; color:var(--gray-500); line-height:1.6;">Type the supplier name — the system auto-suggests matches and finds the domain automatically.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:14px; align-items:flex-start;">
+                <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:6px;"></div>
+                <div>
+                  <div style="font-size:13px; font-weight:700; color:var(--gray-800); margin-bottom:3px;">Domain validation built in</div>
+                  <div style="font-size:13px; color:var(--gray-500); line-height:1.6;">Domains are checked automatically — eliminating a key source of downstream data errors.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:14px; align-items:flex-start;">
+                <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:6px;"></div>
+                <div>
+                  <div style="font-size:13px; font-weight:700; color:var(--gray-800); margin-bottom:3px;">API pre-fills structured data</div>
+                  <div style="font-size:13px; color:var(--gray-500); line-height:1.6;">Step 2 fields are pre-populated from external data — users review and adjust rather than type from scratch.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:14px; align-items:flex-start;">
+                <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:6px;"></div>
+                <div>
+                  <div style="font-size:13px; font-weight:700; color:var(--gray-800); margin-bottom:3px;">Skip and save at any point</div>
+                  <div style="font-size:13px; color:var(--gray-500); line-height:1.6;">Non-essential fields are optional and clearly labelled — users can complete a record in seconds and enrich it later.</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
