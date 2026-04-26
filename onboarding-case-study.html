@@ -770,10 +770,21 @@
     <div class="container">
 
       <!-- Section header -->
-      <div style="max-width:680px; margin-bottom:72px;">
+      <div style="max-width:680px; margin-bottom:56px;">
         <div class="section-label" style="margin-bottom:16px;">The Solution</div>
-        <h2 class="section-title" style="margin-bottom:20px;">A flexible onboarding system built for two realities</h2>
-        <p style="font-size:17px; color:var(--gray-500); line-height:1.8;">Both flows share the same data model and validation logic — ensuring consistency whether a team onboards one supplier or five hundred.</p>
+        <h2 class="section-title" style="margin-bottom:20px;">A flexible onboarding system</h2>
+        <p style="font-size:17px; color:var(--gray-500); line-height:1.8; margin-bottom:16px;">The final design introduces two aligned entry points:</p>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:20px; padding-left:4px;">
+          <div style="display:flex; gap:10px; align-items:center;">
+            <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0;"></div>
+            <span style="font-size:15px; color:var(--gray-700);"><strong>Bulk import</strong> → for scale</span>
+          </div>
+          <div style="display:flex; gap:10px; align-items:center;">
+            <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0;"></div>
+            <span style="font-size:15px; color:var(--gray-700);"><strong>Guided form</strong> → for individual suppliers</span>
+          </div>
+        </div>
+        <p style="font-size:15px; color:var(--gray-500); line-height:1.8;">Both flows share the same structure and data model, ensuring consistency across the platform.</p>
       </div>
 
       <!-- ── SOLUTION 01 ── -->
@@ -786,38 +797,39 @@
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start;">
           <!-- Left: text -->
           <div>
-            <h3 style="font-size:22px; font-weight:700; color:var(--gray-900); letter-spacing:-0.02em; margin-bottom:16px;">Bulk import for large portfolios</h3>
-            <p style="font-size:15px; color:var(--gray-500); line-height:1.8; margin-bottom:28px;">Enterprise teams already manage suppliers in spreadsheets. The solution aligns with this behavior while introducing guardrails to prevent incorrect data ingestion.</p>
+            <h3 style="font-size:22px; font-weight:700; color:var(--gray-900); letter-spacing:-0.02em; margin-bottom:16px;">Bulk import for scalability</h3>
+            <p style="font-size:15px; color:var(--gray-500); line-height:1.8; margin-bottom:28px;">Many customers already manage suppliers in spreadsheets. The solution aligns with this behavior while introducing guardrails to prevent incorrect data ingestion.</p>
 
-            <div style="display:flex; flex-direction:column; gap:16px;">
+            <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; color:var(--gray-400); margin-bottom:12px;">Flow</div>
+            <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:32px; padding-left:4px;">
+              <div style="display:flex; gap:10px; align-items:center;"><div style="width:5px; height:5px; border-radius:50%; background:var(--orange-300); flex-shrink:0;"></div><span style="font-size:13px; color:var(--gray-600);">Upload supplier list (CSV / Excel)</span></div>
+              <div style="display:flex; gap:10px; align-items:center;"><div style="width:5px; height:5px; border-radius:50%; background:var(--orange-300); flex-shrink:0;"></div><span style="font-size:13px; color:var(--gray-600);">Map columns to platform fields</span></div>
+              <div style="display:flex; gap:10px; align-items:center;"><div style="width:5px; height:5px; border-radius:50%; background:var(--orange-300); flex-shrink:0;"></div><span style="font-size:13px; color:var(--gray-600);">Validate before creation</span></div>
+              <div style="display:flex; gap:10px; align-items:center;"><div style="width:5px; height:5px; border-radius:50%; background:var(--orange-300); flex-shrink:0;"></div><span style="font-size:13px; color:var(--gray-600);">Resolve errors and confirm import</span></div>
+            </div>
+
+            <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; color:var(--gray-400); margin-bottom:16px;">Key design decisions</div>
+            <div style="display:flex; flex-direction:column; gap:14px; margin-bottom:28px;">
               <div style="display:flex; gap:14px; align-items:flex-start;">
-                <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:6px;"></div>
-                <div>
-                  <div style="font-size:13px; font-weight:700; color:var(--gray-800); margin-bottom:3px;">Auto field mapping</div>
-                  <div style="font-size:13px; color:var(--gray-500); line-height:1.6;">Column names are normalised and pre-matched — reducing setup time significantly.</div>
-                </div>
+                <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:5px;"></div>
+                <div><div style="font-size:13px; font-weight:700; color:var(--gray-800); margin-bottom:2px;">Auto-mapping fields</div><div style="font-size:13px; color:var(--gray-500); line-height:1.6;">Normalizes column names and pre-matches fields to reduce setup time.</div></div>
               </div>
               <div style="display:flex; gap:14px; align-items:flex-start;">
-                <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:6px;"></div>
-                <div>
-                  <div style="font-size:13px; font-weight:700; color:var(--gray-800); margin-bottom:3px;">Required field gating</div>
-                  <div style="font-size:13px; color:var(--gray-500); line-height:1.6;">Users cannot proceed without mapping critical fields — name and domain must be confirmed.</div>
-                </div>
+                <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:5px;"></div>
+                <div><div style="font-size:13px; font-weight:700; color:var(--gray-800); margin-bottom:2px;">Required field gating</div><div style="font-size:13px; color:var(--gray-500); line-height:1.6;">Prevents users from continuing without mapping critical fields (name + domain).</div></div>
               </div>
               <div style="display:flex; gap:14px; align-items:flex-start;">
-                <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:6px;"></div>
-                <div>
-                  <div style="font-size:13px; font-weight:700; color:var(--gray-800); margin-bottom:3px;">Validation before creation</div>
-                  <div style="font-size:13px; color:var(--gray-500); line-height:1.6;">Errors are flagged per row before import — incorrect domains and missing data must be resolved first.</div>
-                </div>
+                <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:5px;"></div>
+                <div><div style="font-size:13px; font-weight:700; color:var(--gray-800); margin-bottom:2px;">Validation before creation</div><div style="font-size:13px; color:var(--gray-500); line-height:1.6;">Ensures incorrect data does not enter the system.</div></div>
               </div>
               <div style="display:flex; gap:14px; align-items:flex-start;">
-                <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:6px;"></div>
-                <div>
-                  <div style="font-size:13px; font-weight:700; color:var(--gray-800); margin-bottom:3px;">Re-upload instead of inline editing</div>
-                  <div style="font-size:13px; color:var(--gray-500); line-height:1.6;">CSV errors are usually systemic — fixing the file and re-uploading is faster than editing row by row.</div>
-                </div>
+                <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:5px;"></div>
+                <div><div style="font-size:13px; font-weight:700; color:var(--gray-800); margin-bottom:2px;">Re-upload instead of inline editing</div><div style="font-size:13px; color:var(--gray-500); line-height:1.6;">Designed for real-world CSV errors, which are usually systemic rather than isolated.</div></div>
               </div>
+            </div>
+
+            <div style="background:var(--orange-50); border:1px solid var(--orange-200); border-radius:10px; padding:16px 20px;">
+              <p style="font-size:13px; color:var(--orange-700); line-height:1.7; margin:0; font-weight:500;">In enterprise onboarding, the biggest risk is not uploading data — it is importing incorrect data.</p>
             </div>
           </div>
 
@@ -846,36 +858,24 @@
           <!-- Right: text -->
           <div>
             <h3 style="font-size:22px; font-weight:700; color:var(--gray-900); letter-spacing:-0.02em; margin-bottom:16px;">Simplified single-supplier flow</h3>
-            <p style="font-size:15px; color:var(--gray-500); line-height:1.8; margin-bottom:28px;">For everyday use — redesigned to reduce friction and improve accuracy from the first step.</p>
+            <p style="font-size:15px; color:var(--gray-500); line-height:1.8; margin-bottom:28px;">Bulk import solves scale, but users still need to add suppliers individually. The manual flow was redesigned to reduce friction and ambiguity.</p>
 
-            <div style="display:flex; flex-direction:column; gap:16px;">
+            <div style="display:flex; flex-direction:column; gap:14px; margin-bottom:28px;">
               <div style="display:flex; gap:14px; align-items:flex-start;">
-                <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:6px;"></div>
-                <div>
-                  <div style="font-size:13px; font-weight:700; color:var(--gray-800); margin-bottom:3px;">Start with just a name</div>
-                  <div style="font-size:13px; color:var(--gray-500); line-height:1.6;">Type the supplier name — the system auto-suggests matches and finds the domain automatically.</div>
-                </div>
+                <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:5px;"></div>
+                <div><div style="font-size:13px; font-weight:700; color:var(--gray-800); margin-bottom:2px;">Clear distinction between required and optional fields</div><div style="font-size:13px; color:var(--gray-500); line-height:1.6;">Users immediately know what they must fill and what they can skip.</div></div>
               </div>
               <div style="display:flex; gap:14px; align-items:flex-start;">
-                <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:6px;"></div>
-                <div>
-                  <div style="font-size:13px; font-weight:700; color:var(--gray-800); margin-bottom:3px;">Domain validation built in</div>
-                  <div style="font-size:13px; color:var(--gray-500); line-height:1.6;">Domains are checked automatically — eliminating a key source of downstream data errors.</div>
-                </div>
+                <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:5px;"></div>
+                <div><div style="font-size:13px; font-weight:700; color:var(--gray-800); margin-bottom:2px;">Structured sections</div><div style="font-size:13px; color:var(--gray-500); line-height:1.6;">Company details, risk context, and monitoring grouped separately — reducing cognitive load.</div></div>
               </div>
               <div style="display:flex; gap:14px; align-items:flex-start;">
-                <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:6px;"></div>
-                <div>
-                  <div style="font-size:13px; font-weight:700; color:var(--gray-800); margin-bottom:3px;">API pre-fills structured data</div>
-                  <div style="font-size:13px; color:var(--gray-500); line-height:1.6;">Step 2 fields are pre-populated from external data — users review and adjust rather than type from scratch.</div>
-                </div>
+                <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:5px;"></div>
+                <div><div style="font-size:13px; font-weight:700; color:var(--gray-800); margin-bottom:2px;">Preselected defaults to reduce effort</div><div style="font-size:13px; color:var(--gray-500); line-height:1.6;">API pre-fills data where possible — users review and adjust rather than type from scratch.</div></div>
               </div>
               <div style="display:flex; gap:14px; align-items:flex-start;">
-                <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:6px;"></div>
-                <div>
-                  <div style="font-size:13px; font-weight:700; color:var(--gray-800); margin-bottom:3px;">Skip and save at any point</div>
-                  <div style="font-size:13px; color:var(--gray-500); line-height:1.6;">Non-essential fields are optional and clearly labelled — users can complete a record in seconds and enrich it later.</div>
-                </div>
+                <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:5px;"></div>
+                <div><div style="font-size:13px; font-weight:700; color:var(--gray-800); margin-bottom:2px;">Improved visual hierarchy and scannability</div><div style="font-size:13px; color:var(--gray-500); line-height:1.6;">Reduces cognitive load and enables faster completion without sacrificing flexibility.</div></div>
               </div>
             </div>
           </div>
