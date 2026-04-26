@@ -589,9 +589,9 @@
 
       <div style="max-width:760px;">
         <div class="section-label" style="margin-bottom:16px;">The Problem</div>
-        <h2 class="section-title" style="margin-bottom:24px;">A process built for one supplier at a time, in a world that needed hundreds</h2>
-        <p style="font-size:17px; color:var(--gray-500); line-height:1.8; max-width:680px; margin-bottom:24px;">Supplier onboarding required operations teams to manually fill a multi-step form with 15+ required fields per supplier. At 3 minutes per record and hundreds of suppliers per quarter, the process consumed entire workdays.</p>
-        <p style="font-size:17px; color:var(--gray-500); line-height:1.8; max-width:680px; margin-bottom:48px;">Teams had resorted to offline spreadsheets and backend engineering workarounds — which meant the product's core onboarding flow wasn't doing its job.</p>
+        <h2 class="section-title" style="margin-bottom:24px;">Onboarding built for one supplier at a time, in a system that needed to handle hundreds</h2>
+        <p style="font-size:17px; color:var(--gray-500); line-height:1.8; max-width:680px; margin-bottom:24px;">Supplier onboarding is the entry point to all TPRM workflows — compliance, audits, and risk monitoring. Yet the experience was designed around manual, one-by-one data entry.</p>
+        <p style="font-size:17px; color:var(--gray-500); line-height:1.8; max-width:680px; margin-bottom:48px;">For enterprise customers managing 50–500 suppliers, this didn't scale — turning onboarding into a bottleneck rather than a starting point.</p>
       </div>
 
       <!-- 4-column annotations -->
@@ -602,22 +602,22 @@
           <div style="padding:20px 24px 24px 0; border-right:1px solid var(--gray-100);">
             <span style="font-size:28px; font-weight:800; color:var(--orange-500); display:block; line-height:1; margin-bottom:12px; letter-spacing:-0.02em;">01</span>
             <div style="font-size:15px; font-weight:700; color:var(--gray-900); line-height:1.4; margin-bottom:10px;">Manual entry at scale</div>
-            <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Each supplier required 3+ minutes of field-by-field form filling — unsustainable at volume.</div>
+            <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Session recordings showed users consistently hesitating on field requirements, scrolling repeatedly, and spending significantly more time than the task warranted — even for a single supplier.</div>
           </div>
           <div style="padding:20px 24px 24px 24px; border-right:1px solid var(--gray-100);">
             <span style="font-size:28px; font-weight:800; color:var(--orange-500); display:block; line-height:1; margin-bottom:12px; letter-spacing:-0.02em;">02</span>
-            <div style="font-size:15px; font-weight:700; color:var(--gray-900); line-height:1.4; margin-bottom:10px;">No inline validation</div>
-            <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Errors only surfaced after full submission — forcing users to re-enter entire records.</div>
+            <div style="font-size:15px; font-weight:700; color:var(--gray-900); line-height:1.4; margin-bottom:10px;">No bulk operations</div>
+            <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Teams managing large vendor portfolios had no way to import existing data, forcing them into repetitive manual work. The workaround was offline spreadsheets and backend engineering imports.</div>
           </div>
           <div style="padding:20px 24px 24px 24px; border-right:1px solid var(--gray-100);">
             <span style="font-size:28px; font-weight:800; color:var(--orange-500); display:block; line-height:1; margin-bottom:12px; letter-spacing:-0.02em;">03</span>
-            <div style="font-size:15px; font-weight:700; color:var(--gray-900); line-height:1.4; margin-bottom:10px;">No bulk operations</div>
-            <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Teams worked around it via offline spreadsheets and backend engineering imports.</div>
+            <div style="font-size:15px; font-weight:700; color:var(--gray-900); line-height:1.4; margin-bottom:10px;">Delayed error feedback</div>
+            <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Validation only occurred after submission — causing users to re-enter full records when issues appeared.</div>
           </div>
           <div style="padding:20px 0 24px 24px;">
             <span style="font-size:28px; font-weight:800; color:var(--orange-500); display:block; line-height:1; margin-bottom:12px; letter-spacing:-0.02em;">04</span>
-            <div style="font-size:15px; font-weight:700; color:var(--gray-900); line-height:1.4; margin-bottom:10px;">High downstream error rate</div>
-            <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">A 12% error rate on submitted records caused compliance workflow failures.</div>
+            <div style="font-size:15px; font-weight:700; color:var(--gray-900); line-height:1.4; margin-bottom:10px;">Downstream data risk</div>
+            <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Incorrect data entered during onboarding propagated silently into compliance and audit workflows, reducing trust in the system.</div>
           </div>
         </div>
 
@@ -625,7 +625,7 @@
           <div class="cs-screenshot-placeholder">
             <span>Screenshot placeholder — Original manual onboarding form</span>
           </div>
-          <p style="font-size:13px; color:var(--gray-400); text-align:center; margin-top:16px; line-height:1.5;">The original form — 15+ fields, no inline validation, no bulk support.</p>
+          <p style="font-size:13px; color:var(--gray-400); text-align:center; margin-top:16px; line-height:1.5;">The original form — one-by-one entry, no bulk support, validation only on submit.</p>
         </div>
       </div>
 
@@ -638,9 +638,9 @@
           </div>
         </div>
         <div>
-          <div style="font-size:15px; font-weight:700; color:var(--gray-900); margin-bottom:16px;">Behavioral evidence</div>
-          <p style="font-size:15px; color:var(--gray-500); line-height:1.8;"><strong>Session recordings</strong> showed users copy-pasting data from spreadsheets into the form field by field. Support tickets related to onboarding errors accounted for <strong>23% of total platform support volume</strong>.</p>
-          <p style="font-size:15px; color:var(--gray-500); line-height:1.8; margin-top:16px;">The product had a bulk onboarding flow — but it wasn't being used. Teams had already abandoned it in favour of workarounds.</p>
+          <div style="font-size:15px; font-weight:700; color:var(--gray-900); margin-bottom:16px;">Impact</div>
+          <p style="font-size:15px; color:var(--gray-500); line-height:1.8;">As a result, teams bypassed the product entirely — relying on spreadsheets and backend workarounds — delaying time-to-value and weakening the platform's role in enterprise onboarding.</p>
+          <p style="font-size:15px; color:var(--gray-500); line-height:1.8; margin-top:16px;">Onboarding wasn't failing because users couldn't fill a form. It was failing because the product wasn't designed for how enterprise teams actually work.</p>
         </div>
       </div>
 
