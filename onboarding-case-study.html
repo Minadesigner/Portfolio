@@ -528,7 +528,7 @@
 
         <a href="#stage-challenge" class="cs-stage" data-stage="stage-challenge">
           <span class="cs-stage-dot">4</span>
-          <span class="cs-stage-label">Challenge & Approach</span>
+          <span class="cs-stage-label">Approach</span>
         </a>
         <div class="cs-stage-line" data-line="3"><div class="cs-stage-line-fill"></div></div>
 
@@ -717,22 +717,27 @@
   <hr class="divider">
 
   <!-- ═══════════════════════════════════════ -->
-  <!-- CHALLENGE & APPROACH -->
+  <!-- DESIGN APPROACH -->
   <!-- ═══════════════════════════════════════ -->
   <section id="stage-challenge" style="background:var(--gray-50); padding:80px 0;">
     <div class="container">
 
       <div style="max-width:760px;">
-        <div class="section-label" style="margin-bottom:16px;">Challenge &amp; Approach</div>
-        <h2 class="section-title" style="margin-bottom:24px;">One import flow. Three failure modes to prevent.</h2>
-        <p style="font-size:17px; color:var(--gray-500); line-height:1.8; max-width:680px; margin-bottom:24px;">The core design challenge wasn't building a file upload — it was building trust. Operations teams are responsible for data accuracy. Any flow that risked corrupting supplier records would be abandoned immediately.</p>
-        <p style="font-size:17px; color:var(--gray-500); line-height:1.8; max-width:680px; margin-bottom:48px;">I mapped the three failure modes users feared most — wrong field mapping, silent errors, and partial imports — and designed the flow so each step directly prevented one. The approach was shaped by <strong>user urgency</strong> (speed matters, but not at the cost of accuracy), <strong>stakeholder input</strong> on what caused the most downstream damage, and <strong>competitor analysis</strong> of how Salesforce, HubSpot and Airtable handle bulk imports.</p>
-      </div>
-
-      <div style="background:var(--gray-50); border-radius:16px; border:1px solid var(--gray-200); padding:32px; margin-top:48px;">
-        <div class="cs-screenshot-placeholder">
-          <span>Screenshot placeholder — Three-step flow mapped to failure modes</span>
+        <div class="section-label" style="margin-bottom:16px;">Design Approach</div>
+        <h2 class="section-title" style="margin-bottom:24px;">From manual input to scalable onboarding</h2>
+        <p style="font-size:17px; color:var(--gray-500); line-height:1.8; max-width:680px; margin-bottom:24px;">I reframed onboarding as a system that needs to support both scale and flexibility. Rather than optimizing a single flow, the goal was to align the experience with how users actually manage supplier data.</p>
+        <p style="font-size:17px; color:var(--gray-500); line-height:1.8; max-width:680px; margin-bottom:32px;">This led to two complementary solutions:</p>
+        <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:32px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <span style="width:8px; height:8px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:7px;"></span>
+            <p style="font-size:17px; color:var(--gray-700); line-height:1.8; margin:0;"><strong>Bulk import</strong> for large supplier portfolios</p>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <span style="width:8px; height:8px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:7px;"></span>
+            <p style="font-size:17px; color:var(--gray-700); line-height:1.8; margin:0;"><strong>Simplified</strong> single-supplier flow for everyday use</p>
+          </div>
         </div>
+        <p style="font-size:17px; color:var(--gray-500); line-height:1.8; max-width:680px; font-style:italic;">Bulk import is not just about speed — it is controlled onboarding at scale.</p>
       </div>
 
     </div>
