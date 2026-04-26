@@ -722,22 +722,40 @@
   <section id="stage-challenge" style="background:var(--gray-50); padding:80px 0;">
     <div class="container">
 
-      <div style="max-width:760px;">
+      <!-- Label + headline -->
+      <div style="max-width:760px; margin-bottom:56px;">
         <div class="section-label" style="margin-bottom:16px;">Design Approach</div>
-        <h2 class="section-title" style="margin-bottom:24px;">From manual input to scalable onboarding</h2>
-        <p style="font-size:17px; color:var(--gray-500); line-height:1.8; max-width:680px; margin-bottom:24px;">I reframed onboarding as a system that needs to support both scale and flexibility. Rather than optimizing a single flow, the goal was to align the experience with how users actually manage supplier data.</p>
-        <p style="font-size:17px; color:var(--gray-500); line-height:1.8; max-width:680px; margin-bottom:32px;">This led to two complementary solutions:</p>
-        <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:32px;">
-          <div style="display:flex; gap:12px; align-items:flex-start;">
-            <span style="width:8px; height:8px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:7px;"></span>
-            <p style="font-size:17px; color:var(--gray-700); line-height:1.8; margin:0;"><strong>Bulk import</strong> for large supplier portfolios</p>
+        <h2 class="section-title" style="margin-bottom:20px;">From manual input to scalable onboarding</h2>
+        <p style="font-size:17px; color:var(--gray-500); line-height:1.8; max-width:640px;">I reframed onboarding as a system that needs to support both scale and flexibility. Rather than optimizing a single flow, the goal was to align the experience with how users actually manage supplier data.</p>
+      </div>
+
+      <!-- Two solution cards -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:40px;">
+
+        <div style="background:var(--white); border:1px solid var(--gray-200); border-radius:16px; padding:36px;">
+          <div style="width:44px; height:44px; background:var(--orange-50); border-radius:10px; display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
+            <svg width="22" height="22" fill="none" stroke="var(--orange-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
           </div>
-          <div style="display:flex; gap:12px; align-items:flex-start;">
-            <span style="width:8px; height:8px; border-radius:50%; background:var(--orange-500); flex-shrink:0; margin-top:7px;"></span>
-            <p style="font-size:17px; color:var(--gray-700); line-height:1.8; margin:0;"><strong>Simplified</strong> single-supplier flow for everyday use</p>
-          </div>
+          <div style="font-size:11px; font-weight:700; letter-spacing:0.07em; color:var(--orange-500); margin-bottom:10px; text-transform:uppercase;">Solution 01</div>
+          <div style="font-size:20px; font-weight:700; color:var(--gray-900); line-height:1.3; margin-bottom:12px;">Bulk import</div>
+          <p style="font-size:14px; color:var(--gray-500); line-height:1.8; margin:0;">For enterprise teams already managing suppliers in spreadsheets. Upload a CSV, map columns to system fields, validate before committing — controlled onboarding at scale.</p>
         </div>
-        <p style="font-size:17px; color:var(--gray-500); line-height:1.8; max-width:680px; font-style:italic;">Bulk import is not just about speed — it is controlled onboarding at scale.</p>
+
+        <div style="background:var(--white); border:1px solid var(--gray-200); border-radius:16px; padding:36px;">
+          <div style="width:44px; height:44px; background:var(--orange-50); border-radius:10px; display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
+            <svg width="22" height="22" fill="none" stroke="var(--orange-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          </div>
+          <div style="font-size:11px; font-weight:700; letter-spacing:0.07em; color:var(--orange-500); margin-bottom:10px; text-transform:uppercase;">Solution 02</div>
+          <div style="font-size:20px; font-weight:700; color:var(--gray-900); line-height:1.3; margin-bottom:12px;">Simplified single-supplier flow</div>
+          <p style="font-size:14px; color:var(--gray-500); line-height:1.8; margin:0;">For everyday use. Start with a name, get auto-suggestions, validate the domain automatically. Only the essential fields — with smart defaults and the option to skip the rest.</p>
+        </div>
+
+      </div>
+
+      <!-- Callout -->
+      <div style="background:var(--orange-50); border:1px solid var(--orange-200); border-radius:12px; padding:24px 32px; display:flex; align-items:center; gap:16px;">
+        <div style="width:4px; height:40px; background:var(--orange-500); border-radius:2px; flex-shrink:0;"></div>
+        <p style="font-size:16px; color:var(--orange-700); line-height:1.7; margin:0; font-weight:500;">Bulk import is not just about speed — it is controlled onboarding at scale.</p>
       </div>
 
     </div>
