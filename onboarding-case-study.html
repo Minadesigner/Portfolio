@@ -930,50 +930,83 @@
   <!-- ═══════════════════════════════════════ -->
   <!-- OUTCOME -->
   <!-- ═══════════════════════════════════════ -->
-  <section class="cs-section" id="stage-outcome" style="background:var(--white); padding:80px 0;">
+  <section id="stage-outcome" style="background:var(--white); padding:80px 0;">
     <div class="container">
 
-      <div style="max-width:760px; margin-bottom:56px;">
+      <div style="max-width:760px; margin-bottom:48px;">
         <div class="section-label" style="margin-bottom:16px;">Outcome</div>
-        <h2 class="section-title" style="margin-bottom:16px;">Operations teams stopped worrying about onboarding</h2>
-        <p style="font-size:17px; color:var(--gray-500); line-height:1.8; max-width:640px; margin-bottom:12px;">The redesigned flow eliminated the workarounds entirely. Teams now onboard hundreds of suppliers in a single session — without spreadsheet exports, backend engineering, or data correction tickets. With 30 days of data the signals are clear; return rate and session duration would confirm adoption at scale.</p>
-        <p style="font-size:13px; color:var(--gray-400); line-height:1.8; margin-bottom:0;">First 30 days post-launch &middot; [Date range placeholder] &middot; Early signals only.</p>
+        <h2 class="section-title" style="margin-bottom:16px;">From a bottleneck to a starting point</h2>
+        <p style="font-size:17px; color:var(--gray-500); line-height:1.8; max-width:640px; margin-bottom:12px;">The redesign removed the biggest blocker to enterprise adoption. Teams that previously spent entire workdays on manual data entry can now onboard hundreds of suppliers in a single session.</p>
+        <p style="font-size:13px; color:var(--gray-400); line-height:1.8; border-left:2px solid var(--gray-200); padding-left:16px;">First 30 days post-launch &middot; Early signals only &mdash; too soon for longitudinal conclusions.</p>
       </div>
 
-      <!-- Metrics + Screenshot -->
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:stretch;">
+      <!-- Signal rows -->
+      <div style="border-top:1px solid var(--gray-200); margin-bottom:64px;">
 
-        <!-- Left: 3 metrics stacked equally -->
-        <div style="display:flex; flex-direction:column; border-top:1px solid var(--gray-100);">
-
-          <div style="flex:1; padding:28px 0; border-bottom:1px solid var(--gray-100);">
-            <div style="font-size:36px; font-weight:800; color:var(--orange-500); line-height:1; margin-bottom:6px; letter-spacing:-0.03em;">83%</div>
-            <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; color:var(--gray-400); margin-bottom:12px;">faster onboarding</div>
-            <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Average onboarding time dropped from ~3 minutes to ~30 seconds per supplier record.</div>
+        <div style="display:grid; grid-template-columns:120px 1fr; gap:32px; padding:32px 0; border-bottom:1px solid var(--gray-200); align-items:start;">
+          <div>
+            <div style="font-size:22px; font-weight:700; color:var(--orange-500); line-height:1; margin-bottom:4px; letter-spacing:-0.02em;">~90 sec</div>
+            <div style="font-size:9px; font-weight:600; text-transform:uppercase; letter-spacing:0.07em; color:var(--gray-400); line-height:1.4;">per supplier<br>down from 3&ndash;4 min</div>
           </div>
-
-          <div style="flex:1; padding:28px 0; border-bottom:1px solid var(--gray-100);">
-            <div style="font-size:36px; font-weight:800; color:var(--orange-500); line-height:1; margin-bottom:6px; letter-spacing:-0.03em;">0</div>
-            <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; color:var(--gray-400); margin-bottom:12px;">manual entry errors</div>
-            <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Zero data entry errors in the first 30 days. Inline validation catches issues before they reach the system.</div>
+          <div>
+            <div style="font-size:14px; font-weight:600; color:var(--gray-900); line-height:1.4; margin-bottom:6px;">Single supplier onboarding time dropped significantly</div>
+            <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Observed onboarding time per supplier dropped from 3&ndash;4 minutes to approximately 90 seconds &mdash; based on session recordings before and after launch.</div>
           </div>
-
-          <div style="flex:1; padding:28px 0;">
-            <div style="font-size:36px; font-weight:800; color:var(--orange-500); line-height:1; margin-bottom:6px; letter-spacing:-0.03em;">94%</div>
-            <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; color:var(--gray-400); margin-bottom:12px;">drop in support tickets</div>
-            <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Onboarding-related support tickets fell 94% — eliminating the largest single category of platform support volume.</div>
-          </div>
-
         </div>
 
-        <!-- Right: Screenshot -->
-        <div style="background:var(--gray-50); border:1px solid var(--gray-100); border-radius:14px; padding:16px; display:flex; flex-direction:column;">
-          <div style="border-radius:8px; overflow:hidden; flex:1; background:var(--gray-100); display:flex; align-items:center; justify-content:center;">
-            <span style="font-size:13px; color:var(--gray-400); font-weight:500;">Screenshot placeholder — Import success state</span>
+        <div style="display:grid; grid-template-columns:120px 1fr; gap:32px; padding:32px 0; border-bottom:1px solid var(--gray-200); align-items:start;">
+          <div>
+            <div style="font-size:22px; font-weight:700; color:var(--orange-500); line-height:1; margin-bottom:4px;">&#10003;</div>
+            <div style="font-size:9px; font-weight:600; text-transform:uppercase; letter-spacing:0.07em; color:var(--gray-400); line-height:1.4;">bulk import<br>enabled</div>
           </div>
-          <p style="font-size:11px; color:var(--gray-400); text-align:center; margin-top:12px; line-height:1.6; flex-shrink:0;">Success state &middot; summary of imported records &middot; any skipped rows flagged inline</p>
+          <div>
+            <div style="font-size:14px; font-weight:600; color:var(--gray-900); line-height:1.4; margin-bottom:6px;">Enterprise teams can now onboard at scale</div>
+            <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Teams managing 50&ndash;500 suppliers can now complete onboarding in a single structured session &mdash; a workflow that previously didn&rsquo;t exist in the product.</div>
+          </div>
         </div>
 
+        <div style="display:grid; grid-template-columns:120px 1fr; gap:32px; padding:32px 0; border-bottom:1px solid var(--gray-200); align-items:start;">
+          <div>
+            <div style="font-size:22px; font-weight:700; color:var(--orange-500); line-height:1; margin-bottom:4px;">0%</div>
+            <div style="font-size:9px; font-weight:600; text-transform:uppercase; letter-spacing:0.07em; color:var(--gray-400); line-height:1.4;">rage clicks</div>
+          </div>
+          <div>
+            <div style="font-size:14px; font-weight:600; color:var(--gray-900); line-height:1.4; margin-bottom:6px;">No frustration signals detected</div>
+            <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Zero rage clicks across all sessions. Users move through the new flows with clear intent &mdash; the interface removed ambiguity from the onboarding process.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- What we discovered -->
+      <div style="border:1px solid var(--gray-200); border-radius:12px; padding:32px; margin-bottom:48px;">
+        <div style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:var(--orange-500); margin-bottom:16px;">What we discovered post-launch</div>
+        <p style="font-size:15px; color:var(--gray-700); line-height:1.8; margin-bottom:12px;">Post-launch monitoring identified friction in the CSV validation step &mdash; users who encountered errors in the final import screen had a high abandonment rate. This was independently confirmed by our CTO through Clarity session recordings, and validated by our CEO who manages direct customer relationships and reported that users regularly contact support about this issue.</p>
+        <p style="font-size:15px; color:var(--gray-700); line-height:1.8;">The finding is now prioritised in the next sprint, with exploration of AI-assisted data correction to reduce manual error resolution for users.</p>
+      </div>
+
+      <!-- What I would track next -->
+      <div style="border-top:1px solid var(--gray-200); padding-top:24px;">
+        <div style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:var(--gray-400); margin-bottom:20px;">What I would track next</div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0;">
+          <div style="padding:14px 24px 14px 0; border-bottom:1px solid var(--gray-200); border-right:1px solid var(--gray-200);">
+            <div style="font-size:13px; font-weight:600; color:var(--gray-900); margin-bottom:4px;">CSV import completion rate</div>
+            <div style="font-size:12px; color:var(--gray-500); line-height:1.6;">To measure how many users successfully complete bulk onboarding end to end.</div>
+          </div>
+          <div style="padding:14px 0 14px 24px; border-bottom:1px solid var(--gray-200);">
+            <div style="font-size:13px; font-weight:600; color:var(--gray-900); margin-bottom:4px;">Error resolution time</div>
+            <div style="font-size:12px; color:var(--gray-500); line-height:1.6;">To understand how long users spend fixing validation issues before completing import.</div>
+          </div>
+          <div style="padding:14px 24px 14px 0; border-right:1px solid var(--gray-200);">
+            <div style="font-size:13px; font-weight:600; color:var(--gray-900); margin-bottom:4px;">Return visit rate</div>
+            <div style="font-size:12px; color:var(--gray-500); line-height:1.6;">To confirm onboarding becomes a habitual starting point rather than a one-time task.</div>
+          </div>
+          <div style="padding:14px 0 14px 24px;">
+            <div style="font-size:13px; font-weight:600; color:var(--gray-900); margin-bottom:4px;">Supplier data quality score</div>
+            <div style="font-size:12px; color:var(--gray-500); line-height:1.6;">To validate that the new validation logic reduces downstream data errors in compliance workflows.</div>
+          </div>
+        </div>
       </div>
 
     </div>
