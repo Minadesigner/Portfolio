@@ -640,8 +640,8 @@
 
       <div style="max-width:760px; margin-bottom:56px;">
         <div class="section-label" style="margin-bottom:16px;">Research & Discovery</div>
-        <h2 class="section-title" style="margin-bottom:24px;">Why users abandoned the onboarding flow entirely</h2>
-        <p style="font-size:17px; color:var(--gray-500); line-height:1.8; max-width:680px;">Observing users on the platform and gathering feedback from the sales team revealed two separate but connected problems — one about speed, one about accuracy.</p>
+        <h2 class="section-title" style="margin-bottom:24px;">Why users abandoned the onboarding flow</h2>
+        <p style="font-size:17px; color:var(--gray-500); line-height:1.8; max-width:680px;">Observing user behavior and gathering input from sales revealed two connected failures: the flow was too slow for scale, and too loose for accuracy.</p>
       </div>
 
       <div style="border-top:1px solid var(--gray-100); margin-top:48px;">
@@ -649,52 +649,52 @@
         <div style="display:grid; grid-template-columns:1fr 1fr; padding:36px 0; border-bottom:1px solid var(--gray-100);">
           <div style="padding-right:48px;">
             <div style="font-size:11px; font-weight:700; letter-spacing:0.07em; color:var(--orange-500); margin-bottom:12px;">01 &mdash; Key Insight</div>
-            <div style="font-size:16px; font-weight:700; color:var(--gray-900); line-height:1.4; margin-bottom:8px;">The form exposed users to too much at once</div>
+            <div style="font-size:16px; font-weight:700; color:var(--gray-900); line-height:1.4; margin-bottom:8px;">The form exposed too much, too early</div>
             <div style="font-size:12px; color:var(--gray-400); line-height:1.6;">Source: Session recordings (Clarity)</div>
           </div>
           <div style="padding-left:48px; border-left:1px solid var(--gray-100);">
             <div style="font-size:11px; font-weight:700; letter-spacing:0.07em; color:var(--gray-400); margin-bottom:12px;">Design Decision</div>
-            <div style="font-size:15px; font-weight:600; color:var(--gray-700); line-height:1.5; margin-bottom:8px;">Show only what matters first — start with the supplier name</div>
-            <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Users saw too many fields immediately, many not mandatory. The new flow starts with just the supplier name, auto-suggests from a database, and finds the domain automatically — reducing decision load from the first step.</div>
+            <div style="font-size:15px; font-weight:600; color:var(--gray-700); line-height:1.5; margin-bottom:8px;">Introduce progressive disclosure, starting with supplier identity</div>
+            <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Users were immediately presented with all fields, increasing cognitive load and hesitation. The flow now begins with a single input, guiding users step by step.</div>
           </div>
         </div>
 
         <div style="display:grid; grid-template-columns:1fr 1fr; padding:36px 0; border-bottom:1px solid var(--gray-100);">
           <div style="padding-right:48px;">
             <div style="font-size:11px; font-weight:700; letter-spacing:0.07em; color:var(--orange-500); margin-bottom:12px;">02 &mdash; Key Insight</div>
-            <div style="font-size:16px; font-weight:700; color:var(--gray-900); line-height:1.4; margin-bottom:8px;">Speed alone wasn't enough — accuracy was the real risk</div>
-            <div style="font-size:12px; color:var(--gray-400); line-height:1.6;">Source: Session recordings &middot; observed incorrect supplier and domain entries</div>
+            <div style="font-size:16px; font-weight:700; color:var(--gray-900); line-height:1.4; margin-bottom:8px;">Speed without accuracy creates downstream risk</div>
+            <div style="font-size:12px; color:var(--gray-400); line-height:1.6;">Source: Session recordings &middot; incorrect entries observed</div>
           </div>
           <div style="padding-left:48px; border-left:1px solid var(--gray-100);">
             <div style="font-size:11px; font-weight:700; letter-spacing:0.07em; color:var(--gray-400); margin-bottom:12px;">Design Decision</div>
-            <div style="font-size:15px; font-weight:600; color:var(--gray-700); line-height:1.5; margin-bottom:8px;">Validate at every step, not just at submission</div>
-            <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Users were adding wrong supplier names and incorrect domains. The new flow validates domains automatically, pre-fills data from an API, and lets users modify — ensuring accuracy without adding friction.</div>
+            <div style="font-size:15px; font-weight:600; color:var(--gray-700); line-height:1.5; margin-bottom:8px;">Validate data at the point of entry</div>
+            <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Incorrect supplier names and domains were common. Validation is now embedded throughout the flow to ensure data quality without slowing users down.</div>
           </div>
         </div>
 
         <div style="display:grid; grid-template-columns:1fr 1fr; padding:36px 0; border-bottom:1px solid var(--gray-100);">
           <div style="padding-right:48px;">
             <div style="font-size:11px; font-weight:700; letter-spacing:0.07em; color:var(--orange-500); margin-bottom:12px;">03 &mdash; Key Insight</div>
-            <div style="font-size:16px; font-weight:700; color:var(--gray-900); line-height:1.4; margin-bottom:8px;">Enterprise clients were already working in spreadsheets</div>
+            <div style="font-size:16px; font-weight:700; color:var(--gray-900); line-height:1.4; margin-bottom:8px;">Enterprise workflows already existed outside the product</div>
             <div style="font-size:12px; color:var(--gray-400); line-height:1.6;">Source: Sales team feedback</div>
           </div>
           <div style="padding-left:48px; border-left:1px solid var(--gray-100);">
             <div style="font-size:11px; font-weight:700; letter-spacing:0.07em; color:var(--gray-400); margin-bottom:12px;">Design Decision</div>
-            <div style="font-size:15px; font-weight:600; color:var(--gray-700); line-height:1.5; margin-bottom:8px;">Meet users where they are — accept CSV and Excel uploads</div>
-            <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Clients managing 50–500 suppliers had their data in spreadsheets already. Rather than asking them to change their workflow, we built an import flow that accepts their existing files — with guided mapping to ensure data lands correctly.</div>
+            <div style="font-size:15px; font-weight:600; color:var(--gray-700); line-height:1.5; margin-bottom:8px;">Support bulk onboarding through existing data formats</div>
+            <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Teams managing hundreds of suppliers were already working in spreadsheets. The product now integrates with this behavior instead of replacing it.</div>
           </div>
         </div>
 
         <div style="display:grid; grid-template-columns:1fr 1fr; padding:36px 0;">
           <div style="padding-right:48px;">
             <div style="font-size:11px; font-weight:700; letter-spacing:0.07em; color:var(--orange-500); margin-bottom:12px;">04 &mdash; Key Insight</div>
-            <div style="font-size:16px; font-weight:700; color:var(--gray-900); line-height:1.4; margin-bottom:8px;">Bulk import without validation creates a bigger problem</div>
-            <div style="font-size:12px; color:var(--gray-400); line-height:1.6;">Source: Team discussion &middot; observed data accuracy issues</div>
+            <div style="font-size:16px; font-weight:700; color:var(--gray-900); line-height:1.4; margin-bottom:8px;">Bulk import without guardrails creates bigger problems than no import at all</div>
+            <div style="font-size:12px; color:var(--gray-400); line-height:1.6;">Internal discussion &middot; observed errors</div>
           </div>
           <div style="padding-left:48px; border-left:1px solid var(--gray-100);">
             <div style="font-size:11px; font-weight:700; letter-spacing:0.07em; color:var(--gray-400); margin-bottom:12px;">Design Decision</div>
-            <div style="font-size:15px; font-weight:600; color:var(--gray-700); line-height:1.5; margin-bottom:8px;">Gate import on mandatory fields — surface errors before they enter the system</div>
-            <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Speed of import is worthless if the data is wrong. The flow requires mandatory fields to be mapped, validates domains, and flags errors before import — users must fix issues first.</div>
+            <div style="font-size:15px; font-weight:600; color:var(--gray-700); line-height:1.5; margin-bottom:8px;">Gate imports with validation and required structure</div>
+            <div style="font-size:13px; color:var(--gray-500); line-height:1.7;">Bulk onboarding is only valuable if data is reliable. The system enforces required fields and surfaces errors before import.</div>
           </div>
         </div>
 
