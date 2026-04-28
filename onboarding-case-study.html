@@ -795,13 +795,14 @@
 
           <!-- Right: image + annotations -->
           <div>
-            <div style="background:var(--gray-50); border:1px solid var(--gray-200); border-radius:16px; padding:24px; margin-bottom:14px;">
+            <div style="position:relative; background:var(--gray-50); border:1px solid var(--gray-200); border-radius:16px; padding:24px;">
               <img src="Import suppliers from CSV-Map fields.png" alt="Bulk import flow" style="width:100%; border-radius:8px; display:block;">
-            </div>
-            <div style="display:flex; flex-wrap:wrap; gap:8px;">
-              <span style="font-size:11px; color:var(--gray-500); background:var(--gray-50); border:1px solid var(--gray-200); border-radius:4px; padding:4px 10px;">Template ensures correct structure</span>
-              <span style="font-size:11px; color:var(--gray-500); background:var(--gray-50); border:1px solid var(--gray-200); border-radius:4px; padding:4px 10px;">Column mapping aligns data with system model</span>
-              <span style="font-size:11px; color:var(--gray-500); background:var(--gray-50); border:1px solid var(--gray-200); border-radius:4px; padding:4px 10px;">Validation surfaces errors before import</span>
+              <!-- Annotation overlay -->
+              <div style="position:absolute; bottom:36px; left:36px; right:36px; display:flex; flex-wrap:wrap; gap:8px;">
+                <span style="font-size:11px; font-weight:600; color:var(--gray-800); background:white; border-radius:6px; padding:5px 12px; box-shadow:0 2px 8px rgba(0,0,0,0.12);">Template ensures correct structure</span>
+                <span style="font-size:11px; font-weight:600; color:var(--gray-800); background:white; border-radius:6px; padding:5px 12px; box-shadow:0 2px 8px rgba(0,0,0,0.12);">Column mapping aligns data with system model</span>
+                <span style="font-size:11px; font-weight:600; color:var(--gray-800); background:white; border-radius:6px; padding:5px 12px; box-shadow:0 2px 8px rgba(0,0,0,0.12);">Validation surfaces errors before import</span>
+              </div>
             </div>
           </div>
 
@@ -814,14 +815,15 @@
 
           <!-- Left: image + annotations -->
           <div>
-            <div style="background:var(--gray-50); border:1px solid var(--gray-200); border-radius:16px; padding:24px; margin-bottom:14px;">
+            <div style="position:relative; background:var(--gray-50); border:1px solid var(--gray-200); border-radius:16px; padding:24px;">
               <img src="Add a supplier.png" alt="Guided single supplier flow" style="width:100%; border-radius:8px; display:block;">
-            </div>
-            <div style="display:flex; flex-wrap:wrap; gap:8px;">
-              <span style="font-size:11px; color:var(--gray-500); background:var(--gray-50); border:1px solid var(--gray-200); border-radius:4px; padding:4px 10px;">Starts with minimal input (search)</span>
-              <span style="font-size:11px; color:var(--gray-500); background:var(--gray-50); border:1px solid var(--gray-200); border-radius:4px; padding:4px 10px;">Auto-fill reduces manual work</span>
-              <span style="font-size:11px; color:var(--gray-500); background:var(--gray-50); border:1px solid var(--gray-200); border-radius:4px; padding:4px 10px;">Progressive steps reduce cognitive load</span>
-              <span style="font-size:11px; color:var(--gray-500); background:var(--gray-50); border:1px solid var(--gray-200); border-radius:4px; padding:4px 10px;">Validation ensures correct domain data</span>
+              <!-- Annotation overlay -->
+              <div style="position:absolute; bottom:36px; left:36px; right:36px; display:flex; flex-wrap:wrap; gap:8px;">
+                <span style="font-size:11px; font-weight:600; color:var(--gray-800); background:white; border-radius:6px; padding:5px 12px; box-shadow:0 2px 8px rgba(0,0,0,0.12);">Starts with minimal input (search)</span>
+                <span style="font-size:11px; font-weight:600; color:var(--gray-800); background:white; border-radius:6px; padding:5px 12px; box-shadow:0 2px 8px rgba(0,0,0,0.12);">Auto-fill reduces manual work</span>
+                <span style="font-size:11px; font-weight:600; color:var(--gray-800); background:white; border-radius:6px; padding:5px 12px; box-shadow:0 2px 8px rgba(0,0,0,0.12);">Progressive steps reduce cognitive load</span>
+                <span style="font-size:11px; font-weight:600; color:var(--gray-800); background:white; border-radius:6px; padding:5px 12px; box-shadow:0 2px 8px rgba(0,0,0,0.12);">Validation ensures correct domain data</span>
+              </div>
             </div>
           </div>
 
