@@ -768,82 +768,94 @@
         <p style="font-size:17px; color:var(--gray-500); line-height:1.8;">To support both high-volume operations and everyday use, onboarding was structured into two complementary entry modes — each optimised for a different context, while sharing the same validation and data logic.</p>
       </div>
 
-      <!-- ══ SOLUTION 01 ══ -->
-      <div style="margin-bottom:80px;">
+      <!-- ══ SOLUTION 01 ══ text left, image right -->
+      <div style="margin-bottom:96px;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
 
-        <!-- Title row -->
-        <div style="display:grid; grid-template-columns:200px 1fr; gap:48px; align-items:start; margin-bottom:32px;">
-          <div style="padding-top:4px;">
-            <span style="font-size:12px; font-weight:600; color:var(--gray-400); letter-spacing:0.06em;">01</span>
-          </div>
+          <!-- Left: text -->
           <div>
-            <h3 style="font-size:20px; font-weight:700; color:var(--gray-900); letter-spacing:-0.02em; margin:0 0 16px;">Bulk onboarding with controlled validation</h3>
-            <p style="font-size:15px; color:var(--gray-500); line-height:1.8; margin:0 0 8px;"><span style="font-weight:600; color:var(--gray-700);">Why —</span> Enterprise teams already managed supplier data in spreadsheets. Importing without structure or validation introduced significant risk.</p>
-            <p style="font-size:15px; color:var(--gray-500); line-height:1.8; margin:0 0 8px;"><span style="font-weight:600; color:var(--gray-700);">What changed —</span> A guided import flow lets users upload a CSV, map columns to system fields, and validate entries before submission. Errors are surfaced with clear guidance on how to resolve them.</p>
-            <p style="font-size:15px; color:var(--gray-500); line-height:1.8; margin:0;"><span style="font-weight:600; color:var(--orange-500);">Impact —</span> Teams can onboard hundreds of suppliers in a single session while maintaining data quality and consistency.</p>
+            <div style="font-size:11px; font-weight:700; color:var(--orange-500); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:12px;">01 — Bulk onboarding</div>
+            <h3 style="font-size:22px; font-weight:700; color:var(--gray-900); letter-spacing:-0.02em; line-height:1.3; margin:0 0 24px;">Bulk onboarding with controlled validation</h3>
+            <div style="display:flex; flex-direction:column; gap:16px;">
+              <div>
+                <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; color:var(--gray-400); margin-bottom:6px;">Why</div>
+                <p style="font-size:14px; color:var(--gray-500); line-height:1.8; margin:0;">Enterprise teams already managed supplier data in spreadsheets. Importing without structure or validation introduced significant risk.</p>
+              </div>
+              <div>
+                <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; color:var(--gray-400); margin-bottom:6px;">What changed</div>
+                <p style="font-size:14px; color:var(--gray-500); line-height:1.8; margin:0;">A guided import flow lets users upload a CSV, map columns to system fields, and validate entries before submission. Errors are surfaced with clear guidance on how to resolve them.</p>
+              </div>
+              <div>
+                <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; color:var(--orange-500); margin-bottom:6px;">Impact</div>
+                <p style="font-size:14px; color:var(--gray-500); line-height:1.8; margin:0;">Teams can onboard hundreds of suppliers in a single session while maintaining data quality and consistency.</p>
+              </div>
+            </div>
+            <!-- Annotations -->
+            <div style="margin-top:24px; display:flex; flex-direction:column; gap:6px;">
+              <span style="font-size:12px; color:var(--gray-400);">— Template ensures correct structure</span>
+              <span style="font-size:12px; color:var(--gray-400);">— Column mapping aligns external data with system model</span>
+              <span style="font-size:12px; color:var(--gray-400);">— Validation surfaces errors before import</span>
+            </div>
           </div>
-        </div>
 
-        <!-- Image -->
-        <div style="background:var(--gray-50); border:1px solid var(--gray-200); border-radius:12px; padding:24px; margin-bottom:16px;">
-          <img src="Import suppliers from CSV-Map fields.png" alt="Bulk import flow" style="width:100%; border-radius:8px; display:block;">
-        </div>
+          <!-- Right: image -->
+          <div style="background:var(--gray-50); border:1px solid var(--gray-200); border-radius:12px; padding:20px;">
+            <img src="Import suppliers from CSV-Map fields.png" alt="Bulk import flow" style="width:100%; border-radius:8px; display:block;">
+          </div>
 
-        <!-- Annotations -->
-        <div style="display:flex; flex-wrap:wrap; gap:20px; padding-left:4px;">
-          <span style="font-size:12px; color:var(--gray-400);">↑ Template ensures correct structure</span>
-          <span style="font-size:12px; color:var(--gray-400);">↑ Column mapping aligns external data with system model</span>
-          <span style="font-size:12px; color:var(--gray-400);">↑ Validation surfaces errors before import</span>
         </div>
-
       </div>
 
       <!-- Divider -->
-      <div style="border-top:1px solid var(--gray-100); margin-bottom:80px;"></div>
+      <div style="border-top:1px solid var(--gray-100); margin-bottom:96px;"></div>
 
-      <!-- ══ SOLUTION 02 ══ -->
-      <div style="margin-bottom:80px;">
+      <!-- ══ SOLUTION 02 ══ image left, text right -->
+      <div style="margin-bottom:96px;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
 
-        <!-- Title row -->
-        <div style="display:grid; grid-template-columns:200px 1fr; gap:48px; align-items:start; margin-bottom:32px;">
-          <div style="padding-top:4px;">
-            <span style="font-size:12px; font-weight:600; color:var(--gray-400); letter-spacing:0.06em;">02</span>
+          <!-- Left: image -->
+          <div style="background:var(--gray-50); border:1px solid var(--gray-200); border-radius:12px; padding:20px;">
+            <img src="Add a supplier.png" alt="Guided single supplier flow" style="width:100%; border-radius:8px; display:block;">
           </div>
+
+          <!-- Right: text -->
           <div>
-            <h3 style="font-size:20px; font-weight:700; color:var(--gray-900); letter-spacing:-0.02em; margin:0 0 16px;">Guided onboarding for individual suppliers</h3>
-            <p style="font-size:15px; color:var(--gray-500); line-height:1.8; margin:0 0 8px;"><span style="font-weight:600; color:var(--gray-700);">Why —</span> The original form exposed too many fields at once, slowing users down and increasing errors.</p>
-            <p style="font-size:15px; color:var(--gray-500); line-height:1.8; margin:0 0 8px;"><span style="font-weight:600; color:var(--gray-700);">What changed —</span> The flow starts with a simple supplier search. If the supplier exists, key data is auto-filled. If not, users continue through a step-by-step flow with prefilled suggestions.</p>
-            <p style="font-size:15px; color:var(--gray-500); line-height:1.8; margin:0;"><span style="font-weight:600; color:var(--orange-500);">Impact —</span> Reduces input effort, speeds up onboarding, and improves accuracy through progressive validation and smart defaults.</p>
+            <div style="font-size:11px; font-weight:700; color:var(--orange-500); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:12px;">02 — Guided onboarding</div>
+            <h3 style="font-size:22px; font-weight:700; color:var(--gray-900); letter-spacing:-0.02em; line-height:1.3; margin:0 0 24px;">Guided onboarding for individual suppliers</h3>
+            <div style="display:flex; flex-direction:column; gap:16px;">
+              <div>
+                <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; color:var(--gray-400); margin-bottom:6px;">Why</div>
+                <p style="font-size:14px; color:var(--gray-500); line-height:1.8; margin:0;">The original form exposed too many fields at once, slowing users down and increasing errors.</p>
+              </div>
+              <div>
+                <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; color:var(--gray-400); margin-bottom:6px;">What changed</div>
+                <p style="font-size:14px; color:var(--gray-500); line-height:1.8; margin:0;">The flow starts with a simple supplier search. If the supplier exists, key data is auto-filled. If not, users continue through a step-by-step flow with prefilled suggestions.</p>
+              </div>
+              <div>
+                <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; color:var(--orange-500); margin-bottom:6px;">Impact</div>
+                <p style="font-size:14px; color:var(--gray-500); line-height:1.8; margin:0;">Reduces input effort, speeds up onboarding, and improves accuracy through progressive validation and smart defaults.</p>
+              </div>
+            </div>
+            <!-- Annotations -->
+            <div style="margin-top:24px; display:flex; flex-direction:column; gap:6px;">
+              <span style="font-size:12px; color:var(--gray-400);">— Starts with minimal input (search)</span>
+              <span style="font-size:12px; color:var(--gray-400);">— Auto-fill reduces manual work</span>
+              <span style="font-size:12px; color:var(--gray-400);">— Progressive steps reduce cognitive load</span>
+              <span style="font-size:12px; color:var(--gray-400);">— Validation ensures correct domain data</span>
+            </div>
           </div>
-        </div>
 
-        <!-- Image -->
-        <div style="background:var(--gray-50); border:1px solid var(--gray-200); border-radius:12px; padding:24px; margin-bottom:16px;">
-          <img src="Add a supplier.png" alt="Guided single supplier flow" style="width:100%; border-radius:8px; display:block;">
         </div>
-
-        <!-- Annotations -->
-        <div style="display:flex; flex-wrap:wrap; gap:20px; padding-left:4px;">
-          <span style="font-size:12px; color:var(--gray-400);">↑ Starts with minimal input (search)</span>
-          <span style="font-size:12px; color:var(--gray-400);">↑ Auto-fill reduces manual work</span>
-          <span style="font-size:12px; color:var(--gray-400);">↑ Progressive steps reduce cognitive load</span>
-          <span style="font-size:12px; color:var(--gray-400);">↑ Validation ensures correct domain data</span>
-        </div>
-
       </div>
 
       <!-- Divider -->
-      <div style="border-top:1px solid var(--gray-100); margin-bottom:80px;"></div>
+      <div style="border-top:1px solid var(--gray-100); margin-bottom:64px;"></div>
 
       <!-- ══ SOLUTION 03 ══ -->
-      <div style="display:grid; grid-template-columns:200px 1fr; gap:48px; align-items:start;">
-        <div style="padding-top:4px;">
-          <span style="font-size:12px; font-weight:600; color:var(--gray-400); letter-spacing:0.06em;">03</span>
-        </div>
-        <div>
-          <h3 style="font-size:20px; font-weight:700; color:var(--gray-900); letter-spacing:-0.02em; margin:0 0 16px;">Shared data model and validation logic</h3>
-          <p style="font-size:15px; color:var(--gray-500); line-height:1.8; margin:0;">Both onboarding modes rely on the same data structure and validation rules. This ensures that regardless of how suppliers are added — individually or in bulk — the data remains consistent and reliable across compliance and audit workflows.</p>
-        </div>
+      <div style="max-width:640px;">
+        <div style="font-size:11px; font-weight:700; color:var(--orange-500); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:12px;">03 — Shared foundation</div>
+        <h3 style="font-size:22px; font-weight:700; color:var(--gray-900); letter-spacing:-0.02em; line-height:1.3; margin:0 0 16px;">Shared data model and validation logic</h3>
+        <p style="font-size:15px; color:var(--gray-500); line-height:1.8; margin:0;">Both onboarding modes rely on the same data structure and validation rules. This ensures that regardless of how suppliers are added — individually or in bulk — the data remains consistent and reliable across compliance and audit workflows.</p>
       </div>
 
     </div>
