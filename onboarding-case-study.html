@@ -762,134 +762,88 @@
     <div class="container">
 
       <!-- Section header -->
-      <div style="max-width:680px; margin-bottom:72px;">
+      <div style="max-width:640px; margin-bottom:80px;">
         <div class="section-label" style="margin-bottom:16px;">Solution</div>
         <h2 class="section-title" style="margin-bottom:20px;">Designing onboarding for speed and data accuracy</h2>
         <p style="font-size:17px; color:var(--gray-500); line-height:1.8;">To support both high-volume operations and everyday use, onboarding was structured into two complementary entry modes — each optimised for a different context, while sharing the same validation and data logic.</p>
       </div>
 
       <!-- ══ SOLUTION 01 ══ -->
-      <div style="margin-bottom:96px;">
+      <div style="margin-bottom:80px;">
 
-        <!-- Header row -->
-        <div style="display:flex; align-items:baseline; gap:20px; margin-bottom:40px; padding-bottom:20px; border-bottom:2px solid var(--gray-100);">
-          <span style="font-size:56px; font-weight:800; color:var(--gray-100); line-height:1; letter-spacing:-0.04em; flex-shrink:0;">01</span>
+        <!-- Title row -->
+        <div style="display:grid; grid-template-columns:200px 1fr; gap:48px; align-items:start; margin-bottom:32px;">
+          <div style="padding-top:4px;">
+            <span style="font-size:12px; font-weight:600; color:var(--gray-400); letter-spacing:0.06em;">01</span>
+          </div>
           <div>
-            <div style="font-size:11px; font-weight:700; color:var(--orange-500); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:4px;">Bulk onboarding</div>
-            <h3 style="font-size:24px; font-weight:700; color:var(--gray-900); letter-spacing:-0.02em; margin:0;">Bulk onboarding with controlled validation</h3>
+            <h3 style="font-size:20px; font-weight:700; color:var(--gray-900); letter-spacing:-0.02em; margin:0 0 16px;">Bulk onboarding with controlled validation</h3>
+            <p style="font-size:15px; color:var(--gray-500); line-height:1.8; margin:0 0 8px;"><span style="font-weight:600; color:var(--gray-700);">Why —</span> Enterprise teams already managed supplier data in spreadsheets. Importing without structure or validation introduced significant risk.</p>
+            <p style="font-size:15px; color:var(--gray-500); line-height:1.8; margin:0 0 8px;"><span style="font-weight:600; color:var(--gray-700);">What changed —</span> A guided import flow lets users upload a CSV, map columns to system fields, and validate entries before submission. Errors are surfaced with clear guidance on how to resolve them.</p>
+            <p style="font-size:15px; color:var(--gray-500); line-height:1.8; margin:0;"><span style="font-weight:600; color:var(--orange-500);">Impact —</span> Teams can onboard hundreds of suppliers in a single session while maintaining data quality and consistency.</p>
           </div>
         </div>
 
-        <!-- Why / What changed / Impact -->
-        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px; margin-bottom:40px;">
-          <div style="background:var(--gray-50); border-radius:12px; padding:20px 22px;">
-            <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--gray-400); margin-bottom:10px;">Why</div>
-            <p style="font-size:13px; color:var(--gray-600); line-height:1.7; margin:0;">Enterprise teams already managed supplier data in spreadsheets. Importing this data without structure or validation introduced significant risk.</p>
-          </div>
-          <div style="background:var(--gray-50); border-radius:12px; padding:20px 22px;">
-            <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--gray-400); margin-bottom:10px;">What changed</div>
-            <p style="font-size:13px; color:var(--gray-600); line-height:1.7; margin:0;">A guided import flow allows users to upload CSV files, map their data to system fields, and validate entries before submission. Errors are surfaced clearly, with guidance on how to resolve them.</p>
-          </div>
-          <div style="background:var(--orange-50); border-radius:12px; padding:20px 22px;">
-            <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--orange-500); margin-bottom:10px;">Impact</div>
-            <p style="font-size:13px; color:var(--gray-600); line-height:1.7; margin:0;">Teams can onboard hundreds of suppliers in a single session while maintaining data quality and consistency.</p>
-          </div>
-        </div>
-
-        <!-- Image full width -->
-        <div style="background:var(--gray-50); border:1px solid var(--gray-200); border-radius:16px; padding:28px; margin-bottom:20px;">
-          <img src="Import suppliers from CSV-Map fields.png" alt="Bulk import flow" style="width:100%; border-radius:10px; display:block; box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+        <!-- Image -->
+        <div style="background:var(--gray-50); border:1px solid var(--gray-200); border-radius:12px; padding:24px; margin-bottom:16px;">
+          <img src="Import suppliers from CSV-Map fields.png" alt="Bulk import flow" style="width:100%; border-radius:8px; display:block;">
         </div>
 
         <!-- Annotations -->
-        <div style="display:flex; flex-wrap:wrap; gap:10px;">
-          <div style="display:inline-flex; align-items:center; gap:8px; background:var(--gray-50); border:1px solid var(--gray-200); border-radius:20px; padding:6px 14px;">
-            <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0;"></div>
-            <span style="font-size:12px; color:var(--gray-600); font-weight:500;">Template ensures correct structure</span>
-          </div>
-          <div style="display:inline-flex; align-items:center; gap:8px; background:var(--gray-50); border:1px solid var(--gray-200); border-radius:20px; padding:6px 14px;">
-            <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0;"></div>
-            <span style="font-size:12px; color:var(--gray-600); font-weight:500;">Column mapping aligns external data with system model</span>
-          </div>
-          <div style="display:inline-flex; align-items:center; gap:8px; background:var(--gray-50); border:1px solid var(--gray-200); border-radius:20px; padding:6px 14px;">
-            <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0;"></div>
-            <span style="font-size:12px; color:var(--gray-600); font-weight:500;">Validation surfaces errors before import</span>
-          </div>
+        <div style="display:flex; flex-wrap:wrap; gap:20px; padding-left:4px;">
+          <span style="font-size:12px; color:var(--gray-400);">↑ Template ensures correct structure</span>
+          <span style="font-size:12px; color:var(--gray-400);">↑ Column mapping aligns external data with system model</span>
+          <span style="font-size:12px; color:var(--gray-400);">↑ Validation surfaces errors before import</span>
         </div>
 
       </div>
+
+      <!-- Divider -->
+      <div style="border-top:1px solid var(--gray-100); margin-bottom:80px;"></div>
 
       <!-- ══ SOLUTION 02 ══ -->
-      <div style="margin-bottom:96px;">
+      <div style="margin-bottom:80px;">
 
-        <!-- Header row -->
-        <div style="display:flex; align-items:baseline; gap:20px; margin-bottom:40px; padding-bottom:20px; border-bottom:2px solid var(--gray-100);">
-          <span style="font-size:56px; font-weight:800; color:var(--gray-100); line-height:1; letter-spacing:-0.04em; flex-shrink:0;">02</span>
+        <!-- Title row -->
+        <div style="display:grid; grid-template-columns:200px 1fr; gap:48px; align-items:start; margin-bottom:32px;">
+          <div style="padding-top:4px;">
+            <span style="font-size:12px; font-weight:600; color:var(--gray-400); letter-spacing:0.06em;">02</span>
+          </div>
           <div>
-            <div style="font-size:11px; font-weight:700; color:var(--orange-500); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:4px;">Guided onboarding</div>
-            <h3 style="font-size:24px; font-weight:700; color:var(--gray-900); letter-spacing:-0.02em; margin:0;">Guided onboarding for individual suppliers</h3>
+            <h3 style="font-size:20px; font-weight:700; color:var(--gray-900); letter-spacing:-0.02em; margin:0 0 16px;">Guided onboarding for individual suppliers</h3>
+            <p style="font-size:15px; color:var(--gray-500); line-height:1.8; margin:0 0 8px;"><span style="font-weight:600; color:var(--gray-700);">Why —</span> The original form exposed too many fields at once, slowing users down and increasing errors.</p>
+            <p style="font-size:15px; color:var(--gray-500); line-height:1.8; margin:0 0 8px;"><span style="font-weight:600; color:var(--gray-700);">What changed —</span> The flow starts with a simple supplier search. If the supplier exists, key data is auto-filled. If not, users continue through a step-by-step flow with prefilled suggestions.</p>
+            <p style="font-size:15px; color:var(--gray-500); line-height:1.8; margin:0;"><span style="font-weight:600; color:var(--orange-500);">Impact —</span> Reduces input effort, speeds up onboarding, and improves accuracy through progressive validation and smart defaults.</p>
           </div>
         </div>
 
-        <!-- Why / What changed / Impact -->
-        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px; margin-bottom:40px;">
-          <div style="background:var(--gray-50); border-radius:12px; padding:20px 22px;">
-            <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--gray-400); margin-bottom:10px;">Why</div>
-            <p style="font-size:13px; color:var(--gray-600); line-height:1.7; margin:0;">The original form exposed too many fields at once, slowing users down and increasing errors.</p>
-          </div>
-          <div style="background:var(--gray-50); border-radius:12px; padding:20px 22px;">
-            <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--gray-400); margin-bottom:10px;">What changed</div>
-            <p style="font-size:13px; color:var(--gray-600); line-height:1.7; margin:0;">The flow starts with a simple supplier search. If the supplier exists, key data like name and domain are auto-filled. If not, users can add it manually and continue through a step-by-step flow with prefilled suggestions.</p>
-          </div>
-          <div style="background:var(--orange-50); border-radius:12px; padding:20px 22px;">
-            <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--orange-500); margin-bottom:10px;">Impact</div>
-            <p style="font-size:13px; color:var(--gray-600); line-height:1.7; margin:0;">Reduces input effort, speeds up onboarding, and improves accuracy through progressive validation and smart defaults.</p>
-          </div>
-        </div>
-
-        <!-- Image full width -->
-        <div style="background:var(--gray-50); border:1px solid var(--gray-200); border-radius:16px; padding:28px; margin-bottom:20px;">
-          <img src="Add a supplier.png" alt="Guided single supplier flow" style="width:100%; border-radius:10px; display:block; box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+        <!-- Image -->
+        <div style="background:var(--gray-50); border:1px solid var(--gray-200); border-radius:12px; padding:24px; margin-bottom:16px;">
+          <img src="Add a supplier.png" alt="Guided single supplier flow" style="width:100%; border-radius:8px; display:block;">
         </div>
 
         <!-- Annotations -->
-        <div style="display:flex; flex-wrap:wrap; gap:10px;">
-          <div style="display:inline-flex; align-items:center; gap:8px; background:var(--gray-50); border:1px solid var(--gray-200); border-radius:20px; padding:6px 14px;">
-            <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0;"></div>
-            <span style="font-size:12px; color:var(--gray-600); font-weight:500;">Starts with minimal input (search)</span>
-          </div>
-          <div style="display:inline-flex; align-items:center; gap:8px; background:var(--gray-50); border:1px solid var(--gray-200); border-radius:20px; padding:6px 14px;">
-            <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0;"></div>
-            <span style="font-size:12px; color:var(--gray-600); font-weight:500;">Auto-fill reduces manual work</span>
-          </div>
-          <div style="display:inline-flex; align-items:center; gap:8px; background:var(--gray-50); border:1px solid var(--gray-200); border-radius:20px; padding:6px 14px;">
-            <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0;"></div>
-            <span style="font-size:12px; color:var(--gray-600); font-weight:500;">Progressive steps reduce cognitive load</span>
-          </div>
-          <div style="display:inline-flex; align-items:center; gap:8px; background:var(--gray-50); border:1px solid var(--gray-200); border-radius:20px; padding:6px 14px;">
-            <div style="width:6px; height:6px; border-radius:50%; background:var(--orange-500); flex-shrink:0;"></div>
-            <span style="font-size:12px; color:var(--gray-600); font-weight:500;">Validation ensures correct domain data</span>
-          </div>
+        <div style="display:flex; flex-wrap:wrap; gap:20px; padding-left:4px;">
+          <span style="font-size:12px; color:var(--gray-400);">↑ Starts with minimal input (search)</span>
+          <span style="font-size:12px; color:var(--gray-400);">↑ Auto-fill reduces manual work</span>
+          <span style="font-size:12px; color:var(--gray-400);">↑ Progressive steps reduce cognitive load</span>
+          <span style="font-size:12px; color:var(--gray-400);">↑ Validation ensures correct domain data</span>
         </div>
 
       </div>
 
+      <!-- Divider -->
+      <div style="border-top:1px solid var(--gray-100); margin-bottom:80px;"></div>
+
       <!-- ══ SOLUTION 03 ══ -->
-      <div>
-
-        <!-- Header row -->
-        <div style="display:flex; align-items:baseline; gap:20px; margin-bottom:32px; padding-bottom:20px; border-bottom:2px solid var(--gray-100);">
-          <span style="font-size:56px; font-weight:800; color:var(--gray-100); line-height:1; letter-spacing:-0.04em; flex-shrink:0;">03</span>
-          <div>
-            <div style="font-size:11px; font-weight:700; color:var(--orange-500); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:4px;">Shared foundation</div>
-            <h3 style="font-size:24px; font-weight:700; color:var(--gray-900); letter-spacing:-0.02em; margin:0;">Shared data model and validation logic</h3>
-          </div>
+      <div style="display:grid; grid-template-columns:200px 1fr; gap:48px; align-items:start;">
+        <div style="padding-top:4px;">
+          <span style="font-size:12px; font-weight:600; color:var(--gray-400); letter-spacing:0.06em;">03</span>
         </div>
-
-        <div style="max-width:680px;">
-          <p style="font-size:16px; color:var(--gray-500); line-height:1.8; margin:0;">Both onboarding modes rely on the same data structure and validation rules. This ensures that regardless of how suppliers are added — individually or in bulk — the data remains consistent and reliable across compliance and audit workflows.</p>
+        <div>
+          <h3 style="font-size:20px; font-weight:700; color:var(--gray-900); letter-spacing:-0.02em; margin:0 0 16px;">Shared data model and validation logic</h3>
+          <p style="font-size:15px; color:var(--gray-500); line-height:1.8; margin:0;">Both onboarding modes rely on the same data structure and validation rules. This ensures that regardless of how suppliers are added — individually or in bulk — the data remains consistent and reliable across compliance and audit workflows.</p>
         </div>
-
       </div>
 
     </div>
