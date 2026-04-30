@@ -6,8 +6,7 @@
   <title>Supplier Onboarding Case Study — Mina Shahriari</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter+Tight:wght@600&display=swap" rel="stylesheet">
-  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
   <style>
     /* ─── RESET & BASE ─── */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -113,7 +112,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Clash Display', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 18px;
       font-weight: 700;
       color: var(--white);
@@ -476,101 +475,32 @@
   </section>
 
   <!-- ═══════════════════════════════════════ -->
-  <!-- PROGRESS BAR -->
+  <!-- SCROLL PROGRESS BAR -->
   <!-- ═══════════════════════════════════════ -->
   <style>
-    #cs-progress { position:sticky; top:72px; z-index:90; background:rgba(255,255,255,0.97); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-bottom:1px solid var(--gray-100); }
-    #cs-progress.scrolled { box-shadow:0 1px 8px rgba(0,0,0,0.04); }
-
-    .cs-stage { display:flex; flex-direction:column; align-items:center; gap:6px; text-decoration:none; white-space:nowrap; cursor:pointer; position:relative; padding:0 4px; }
-    .cs-stage-dot { width:28px; height:28px; border-radius:50%; border:2px solid var(--gray-200); background:var(--white); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:var(--gray-400); flex-shrink:0; transition:all 0.35s ease; }
-    .cs-stage-label { font-size:11px; font-weight:600; color:var(--gray-400); letter-spacing:0.02em; transition:all 0.35s ease; }
-
-    .cs-stage.active .cs-stage-dot { background:var(--orange-500); border-color:var(--orange-500); color:white; box-shadow:0 0 0 4px rgba(249,115,22,0.15); }
-    .cs-stage.active .cs-stage-label { color:var(--orange-600); font-weight:700; }
-
-    .cs-stage.passed .cs-stage-dot { background:var(--white); border-color:var(--orange-500); color:var(--orange-500); }
-    .cs-stage.passed .cs-stage-label { color:var(--gray-600); }
-
-    .cs-stage-line { flex:1; height:2px; background:var(--gray-200); min-width:16px; position:relative; overflow:hidden; border-radius:1px; align-self:flex-start; transform:translateY(15px); }
-    .cs-stage-line-fill { position:absolute; top:0; left:0; height:100%; width:0; background:var(--orange-500); border-radius:1px; transition:width 0.4s ease; }
-    .cs-stage-line.filled .cs-stage-line-fill { width:100%; }
-
-    .cs-stage:hover:not(.disabled) .cs-stage-dot { border-color:var(--orange-300); transform:scale(1.1); }
+    #scroll-progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      width: 0%;
+      height: 4px;
+      background: var(--orange-500);
+      z-index: 9999;
+      pointer-events: none;
+      border-radius: 0 2px 2px 0;
+      transition: width 0.08s linear;
+    }
   </style>
-
-  <div id="cs-progress">
-    <div class="container">
-      <div style="display:flex; align-items:flex-start; padding:14px 0 10px; gap:0;">
-
-        <a href="#stage-overview" class="cs-stage active" data-stage="stage-overview">
-          <span class="cs-stage-dot">1</span>
-          <span class="cs-stage-label">Overview</span>
-        </a>
-        <div class="cs-stage-line" data-line="0"><div class="cs-stage-line-fill"></div></div>
-
-        <a href="#stage-problem" class="cs-stage" data-stage="stage-problem">
-          <span class="cs-stage-dot">2</span>
-          <span class="cs-stage-label">Problem</span>
-        </a>
-        <div class="cs-stage-line" data-line="1"><div class="cs-stage-line-fill"></div></div>
-
-        <a href="#stage-research" class="cs-stage" data-stage="stage-research">
-          <span class="cs-stage-dot">3</span>
-          <span class="cs-stage-label">Research</span>
-        </a>
-        <div class="cs-stage-line" data-line="2"><div class="cs-stage-line-fill"></div></div>
-
-        <a href="#stage-challenge" class="cs-stage" data-stage="stage-challenge">
-          <span class="cs-stage-dot">4</span>
-          <span class="cs-stage-label">Approach</span>
-        </a>
-        <div class="cs-stage-line" data-line="3"><div class="cs-stage-line-fill"></div></div>
-
-        <a href="#stage-solution" class="cs-stage" data-stage="stage-solution">
-          <span class="cs-stage-dot">5</span>
-          <span class="cs-stage-label">Solution</span>
-        </a>
-        <div class="cs-stage-line" data-line="4"><div class="cs-stage-line-fill"></div></div>
-
-        <a href="#stage-outcome" class="cs-stage" data-stage="stage-outcome">
-          <span class="cs-stage-dot">6</span>
-          <span class="cs-stage-label">Outcome</span>
-        </a>
-
-      </div>
-    </div>
-  </div>
-
+  <div id="scroll-progress-bar"></div>
   <script>
   (function() {
-    const stages = ['stage-overview','stage-problem','stage-research','stage-challenge','stage-solution','stage-outcome'];
-    const stageEls = document.querySelectorAll('.cs-stage[data-stage]');
-    const lines = document.querySelectorAll('.cs-stage-line');
-    const bar = document.getElementById('cs-progress');
-    const offset = 160;
-
-    function updateProgress() {
-      let activeIndex = 0;
-      for (let i = stages.length - 1; i >= 0; i--) {
-        const el = document.getElementById(stages[i]);
-        if (el && el.getBoundingClientRect().top <= offset) { activeIndex = i; break; }
-      }
-      stageEls.forEach((stage, idx) => {
-        stage.classList.remove('active', 'passed');
-        if (idx === activeIndex) stage.classList.add('active');
-        else if (idx < activeIndex) stage.classList.add('passed');
-      });
-      lines.forEach((line, idx) => {
-        if (idx < activeIndex) line.classList.add('filled');
-        else line.classList.remove('filled');
-      });
-      if (window.scrollY > 200) bar.classList.add('scrolled');
-      else bar.classList.remove('scrolled');
+    const bar = document.getElementById('scroll-progress-bar');
+    function update() {
+      const scrolled = window.scrollY;
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
     }
-
-    window.addEventListener('scroll', updateProgress, { passive: true });
-    updateProgress();
+    window.addEventListener('scroll', update, { passive: true });
+    update();
   })();
   </script>
 
