@@ -164,122 +164,102 @@
 
     /* ─── HERO ─── */
     .hero {
-      padding-top: 148px;
-      padding-bottom: 112px;
+      padding-top: 160px;
+      padding-bottom: 120px;
+      background: var(--white);
+      text-align: center;
       position: relative;
       overflow: hidden;
-      background: linear-gradient(168deg, var(--white) 0%, #FEFDFB 50%, #FDF9F5 100%);
     }
 
-    .hero .container {
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 64px;
+    .hero-tag {
+      display: inline-flex;
       align-items: center;
-    }
-
-    .hero-content {
-      max-width: 640px;
-    }
-
-    .hero-role {
-      font-size: 13px;
-      font-weight: 600;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--text-secondary);
-      margin-bottom: 20px;
+      color: var(--gray-400);
+      margin-bottom: 36px;
     }
 
-    .hero-role-accent {
-      color: var(--orange-500);
+    .hero-tag-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--orange-500);
+      flex-shrink: 0;
+      animation: pulse-dot 2s ease-in-out infinite;
     }
 
-    .hero-name {
-      font-size: 80px;
-      font-weight: 800;
-      line-height: 1;
-      letter-spacing: -0.035em;
+    @keyframes pulse-dot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.5); opacity: 0.5; }
+    }
+
+    .hero-headline {
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
       color: var(--navy);
       margin-bottom: 32px;
-      white-space: nowrap;
     }
 
-    .hero-name .name-first {
-      font-family: 'Clash Display', sans-serif;
-      font-weight: 700;
+    .hero-line {
+      display: block;
+    }
+
+    .hero-line-2 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .hero-complexity {
       color: var(--orange-500);
-      letter-spacing: 0.02em;
     }
 
-    .hero-name .name-last {
-      font-family: 'Inter Tight', sans-serif;
-      font-weight: 600;
-      color: var(--navy);
-      letter-spacing: 0.015em;
+    .hero-photo-bubble {
+      width: 64px;
+      height: 78px;
+      border-radius: 100px;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 2px solid var(--orange-200);
+      display: inline-flex;
     }
 
-    .hero h2 {
-      font-size: 26px;
-      font-weight: 600;
-      line-height: 1.35;
-      letter-spacing: -0.015em;
-      color: var(--gray-700);
-      margin-bottom: 24px;
-      max-width: 480px;
+    .hero-photo-bubble img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    .hero-into {
+      font-weight: 300;
+      color: var(--gray-400);
     }
 
     .hero-sub {
-      font-size: 17px;
-      color: var(--text-secondary);
+      font-size: 16px;
+      color: var(--gray-500);
       line-height: 1.75;
-      margin-bottom: 0;
       max-width: 460px;
+      margin: 0 auto 40px;
     }
 
     .hero-actions {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 16px;
     }
 
-    /* Hero Portrait */
-    .hero-portrait-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
-
-    .hero-portrait-halo {
-      width: 400px;
-      height: 400px;
-      border-radius: 50%;
-      background: radial-gradient(circle, var(--orange-50) 0%, transparent 70%);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .hero-portrait-ring {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .hero-portrait {
-      width: 340px;
-      height: 340px;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center top;
-      position: relative;
-      z-index: 1;
-      box-shadow: 0 20px 60px rgba(249, 115, 22, 0.1);
-    }
-
+    /* ─── BUTTONS ─── */
     .btn-primary {
       display: inline-flex;
       align-items: center;
@@ -325,183 +305,33 @@
       background: var(--gray-50);
     }
 
-    /* Hero Visual (legacy — retained for case study mockups) */
-    .hero-visual {
-      position: relative;
+    /* ─── ANIMATION WORDS ─── */
+    .anim-word {
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
-    .hero-mockup {
-      width: 100%;
-      background: var(--gray-50);
-      border: 1px solid var(--gray-200);
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.02);
+    .anim-word.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    .mockup-bar {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 20px;
-      border-bottom: 1px solid var(--gray-200);
-      background: var(--white);
-    }
-
-    .mockup-dot {
-      width: 10px;
-      height: 10px;
+    /* ─── CUSTOM CURSOR ─── */
+    #custom-cursor {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      background: var(--orange-500);
       border-radius: 50%;
-      background: var(--gray-200);
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s ease;
     }
 
-    .mockup-body {
-      padding: 24px;
-    }
-
-    /* Dashboard mockup */
-    .dash-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    .dash-title {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--gray-800);
-    }
-
-    .dash-badge {
-      font-size: 11px;
-      padding: 4px 10px;
-      background: var(--orange-50);
-      color: var(--orange-700);
-      border-radius: 100px;
-      font-weight: 600;
-    }
-
-    .dash-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-
-    .dash-stat {
-      background: var(--white);
-      border: 1px solid var(--gray-200);
-      border-radius: 10px;
-      padding: 14px;
-    }
-
-    .dash-stat-label {
-      font-size: 11px;
-      color: var(--gray-400);
-      margin-bottom: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .dash-stat-value {
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--gray-900);
-    }
-
-    .dash-stat-value.orange { color: var(--orange-500); }
-
-    .dash-chart {
-      background: var(--white);
-      border: 1px solid var(--gray-200);
-      border-radius: 10px;
-      padding: 16px;
-    }
-
-    .dash-chart-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 16px;
-    }
-
-    .dash-chart-title {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--gray-700);
-    }
-
-    .dash-chart-legend {
-      display: flex;
-      gap: 12px;
-    }
-
-    .legend-item {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 10px;
-      color: var(--gray-400);
-    }
-
-    .legend-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-    }
-
-    .chart-bars {
-      display: flex;
-      align-items: flex-end;
-      gap: 6px;
-      height: 80px;
-    }
-
-    .chart-bar {
-      flex: 1;
-      border-radius: 4px 4px 0 0;
-      transition: opacity 0.2s;
-    }
-
-    .chart-bar:hover { opacity: 0.8; }
-
-    /* Floating card */
-    .hero-float {
-      position: absolute;
-      bottom: -20px;
-      left: -32px;
-      background: var(--white);
-      border: 1px solid var(--gray-200);
-      border-radius: 12px;
-      padding: 16px 20px;
-      box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.06);
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .float-icon {
-      width: 40px;
-      height: 40px;
-      background: var(--orange-50);
-      border: 1px solid var(--orange-200);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .float-text-label {
-      font-size: 11px;
-      color: var(--gray-400);
-      margin-bottom: 2px;
-    }
-
-    .float-text-value {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--gray-900);
+    @media (hover: none) {
+      #custom-cursor { display: none; }
     }
 
     /* ─── CASE STUDIES ─── */
@@ -1102,41 +932,12 @@
         padding: 0 32px;
       }
 
-      .hero .container {
-        grid-template-columns: 1fr;
-        gap: 48px;
-        text-align: center;
+      .hero-headline {
+        font-size: 52px;
       }
 
-      .hero-content {
-        max-width: 100%;
-      }
-
-      .hero-name {
-        font-size: 56px;
-        white-space: normal;
-      }
-
-      .hero h2 {
-        max-width: 100%;
-      }
-
-      .hero-sub {
-        max-width: 100%;
-      }
-
-      .hero-portrait-wrapper {
-        order: -1;
-      }
-
-      .hero-portrait {
-        width: 240px;
-        height: 240px;
-      }
-
-      .hero-portrait-halo {
-        width: 300px;
-        height: 300px;
+      .hero-line-2 {
+        gap: 14px;
       }
 
       .case-card {
@@ -1203,41 +1004,27 @@
 
       /* Hero */
       .hero {
-        padding-top: 100px;
-        padding-bottom: 64px;
+        padding-top: 110px;
+        padding-bottom: 72px;
       }
 
-      .hero .container {
-        gap: 36px;
+      .hero-headline {
+        font-size: 38px;
       }
 
-      .hero-role {
-        font-size: 11px;
-        margin-bottom: 16px;
+      .hero-line-2 {
+        gap: 10px;
+        flex-wrap: wrap;
       }
 
-      .hero-name {
-        font-size: 44px;
-        margin-bottom: 20px;
+      .hero-photo-bubble {
+        width: 48px;
+        height: 58px;
       }
 
-      .hero h2 {
-        font-size: 20px;
-        margin-bottom: 16px;
-      }
-
-      .hero-sub {
-        font-size: 15px;
-      }
-
-      .hero-portrait {
-        width: 200px;
-        height: 200px;
-      }
-
-      .hero-portrait-halo {
-        width: 260px;
-        height: 260px;
+      .hero-actions {
+        flex-direction: column;
+        gap: 12px;
       }
 
       /* Cases */
@@ -1386,20 +1173,35 @@
   <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <div class="hero-content">
-        <div class="hero-role load-reveal load-delay-1">Product Designer <span class="hero-role-accent">&mdash;</span> Cybersecurity &amp; SaaS</div>
-        <h1 class="hero-name load-reveal load-delay-2"><span class="name-first">Mina</span> <span class="name-last">Shahriari</span></h1>
-        <h2 class="load-reveal load-delay-3">Designing scalable systems for complex products</h2>
-        <p class="hero-sub load-reveal load-delay-4">I design data-heavy SaaS platforms that help teams <span style="font-weight: 600;">understand risk</span>, <span style="font-weight: 600;">prioritize actions</span>, and <span style="font-weight: 600;">make confident decisions</span>.</p>
+
+      <!-- Tag line -->
+      <div class="hero-tag anim-word" id="anim-tag">
+        <span class="hero-tag-dot"></span>
+        Product Designer &middot; B2B SaaS &middot; Cybersecurity
       </div>
 
-      <!-- Hero Portrait -->
-      <div class="hero-portrait-wrapper load-reveal load-delay-3">
-        <div class="hero-portrait-halo"></div>
-        <div class="hero-portrait-ring">
-          <img src="Mina Profile.jpg" alt="Mina Shahriari" class="hero-portrait">
-        </div>
+      <!-- Headline -->
+      <h1 class="hero-headline">
+        <span class="hero-line anim-word" id="anim-line1">I turn</span>
+        <span class="hero-line-2 anim-word" id="anim-line2">
+          <span class="hero-complexity">complexity</span>
+          <span class="hero-photo-bubble">
+            <img src="Mina Profile.jpg" alt="Mina Shahriari">
+          </span>
+          <span class="hero-into">into</span>
+        </span>
+        <span class="hero-line anim-word" id="anim-line3">clarity.</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="hero-sub anim-word" id="anim-sub">Designing data-heavy platforms that help security and risk teams understand what matters — and act fast.</p>
+
+      <!-- Buttons -->
+      <div class="hero-actions anim-word" id="anim-btns">
+        <a href="#work" class="btn-primary">View work</a>
+        <a href="#contact" class="btn-secondary">Let&rsquo;s talk &rarr;</a>
       </div>
+
     </div>
   </section>
 
@@ -1523,17 +1325,43 @@
     </div>
   </footer>
 
-  <!-- SCROLL ANIMATION -->
+  <!-- HERO + SCROLL ANIMATIONS -->
   <script>
-    const observer = new IntersectionObserver((entries) => {
+    // Sequential hero word animations
+    [
+      { id: 'anim-tag',   delay: 0   },
+      { id: 'anim-line1', delay: 100 },
+      { id: 'anim-line2', delay: 300 },
+      { id: 'anim-line3', delay: 500 },
+      { id: 'anim-sub',   delay: 700 },
+      { id: 'anim-btns',  delay: 900 },
+    ].forEach(({ id, delay }) => {
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.classList.add('visible');
+      }, delay);
+    });
+
+    // Scroll-triggered card animations
+    const scrollObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.15 });
 
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    document.querySelectorAll('.fade-in').forEach(el => scrollObserver.observe(el));
+
+    // Custom cursor (desktop only)
+    if (window.matchMedia('(hover: hover)').matches) {
+      const cursor = document.createElement('div');
+      cursor.id = 'custom-cursor';
+      document.body.appendChild(cursor);
+      document.addEventListener('mousemove', e => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top  = e.clientY + 'px';
+      });
+      document.body.style.cursor = 'none';
+    }
   </script>
 
 </body>
