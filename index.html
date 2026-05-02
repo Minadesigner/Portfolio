@@ -252,14 +252,7 @@
     }
 
     .hero-portrait-halo {
-      width: 400px;
-      height: 400px;
-      border-radius: 50%;
-      background: radial-gradient(circle, var(--orange-50) 0%, transparent 70%);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      display: none;
     }
 
     .hero-portrait-ring {
@@ -269,15 +262,24 @@
       justify-content: center;
     }
 
+    .hero-portrait-ring::before {
+      content: "";
+      position: absolute;
+      inset: -6px;
+      border-radius: 30px;
+      border: 2px solid var(--orange-200);
+      z-index: 0;
+    }
+
     .hero-portrait {
       width: 340px;
       height: 340px;
-      border-radius: 50%;
+      border-radius: 24px;
       object-fit: cover;
       object-position: center top;
       position: relative;
       z-index: 1;
-      box-shadow: 0 20px 60px rgba(249, 115, 22, 0.1);
+      box-shadow: 0 20px 60px rgba(249, 115, 22, 0.12);
     }
 
     .btn-primary {
@@ -1185,11 +1187,6 @@
         height: 240px;
       }
 
-      .hero-portrait-halo {
-        width: 300px;
-        height: 300px;
-      }
-
       .case-card {
         grid-template-columns: 1fr;
         min-height: auto;
@@ -1284,11 +1281,6 @@
       .hero-portrait {
         width: 200px;
         height: 200px;
-      }
-
-      .hero-portrait-halo {
-        width: 260px;
-        height: 260px;
       }
 
       /* Cases */
