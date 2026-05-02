@@ -1918,10 +1918,10 @@
     const ctx = canvas.getContext('2d');
 
     const C = { base:[15,23,42], orange:[249,115,22], amber:[251,191,36], green:[52,211,153] };
-    const DOT = 3.5, GAP = 30, CYCLE = 14000;
+    const DOT = 3.5, GAP = 28, CYCLE = 11000;
     let W, H, grid, issues;
 
-    const rgba = (c, a) => `rgba(${c[0]},${c[1]},${c[2]},${Math.max(0,Math.min(1,a)).toFixed(3)})`;
+    const rgba = (c,a) => `rgba(${c[0]},${c[1]},${c[2]},${Math.max(0,Math.min(1,a)).toFixed(3)})`;
     const lerp = (a,b,t) => a+(b-a)*t;
     const sm   = t => { t=Math.max(0,Math.min(1,t)); return t*t*(3-2*t); };
     const rng  = (t,a,b) => Math.max(0,Math.min(1,(t-a)/(b-a)));
@@ -1941,7 +1941,7 @@
           grid.push({ x:c*GAP, y:r*GAP,
                       rf: rows>1 ? r/(rows-1) : 0.5,
                       cf: cols>1 ? c/(cols-1) : 0.5 });
-      const n = Math.floor(grid.length * 0.10);
+      const n = Math.floor(grid.length * 0.11);
       issues = new Set();
       while (issues.size < n) issues.add(Math.floor(Math.random()*grid.length));
     }
@@ -1956,57 +1956,122 @@
       ctx.fill();
     }
 
+    function drawScan(y) {
+      if (y < 0 || y > H+10) return;
+      const grad = ctx.createLinearGradient(0, y-70, 0, y+2);
+      grad.addColorStop(0, 'rgba(249,115,22,0)');
+      grad.addColorStop(1, 'rgba(249,115,22,0.06)');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, y-70, W, 72);
+      ctx.save();
+      ctx.globalAlpha = 0.40;
+      ctx.strokeStyle = '#F97316';
+      ctx.lineWidth = 1;
+      ctx.setLineDash([5, 7]);
+      ctx.shadowColor = '#F97316';
+      ctx.shadowBlur = 8;
+      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.restore();
+    }
+
+    function drawPill(text, x, y, dotC, a) {
+      if (a < 0.02) return;
+      ctx.save();
+      ctx.globalAlpha = a;
+      ctx.font = '500 10.5px "Plus Jakarta Sans", sans-serif';
+      const tw = ctx.measureText(text).width;
+      const pw = tw+26, ph = 20;
+      ctx.fillStyle = 'rgba(255,255,255,0.94)';
+      ctx.shadowColor = 'rgba(0,0,0,0.07)'; ctx.shadowBlur = 8;
+      if (ctx.roundRect) ctx.roundRect(x, y-14, pw, ph, 10);
+      else ctx.rect(x, y-14, pw, ph);
+      ctx.fill();
+      ctx.shadowBlur = 0;
+      ctx.fillStyle = rgba(dotC, 1);
+      ctx.beginPath(); ctx.arc(x+10, y-4, 3, 0, Math.PI*2); ctx.fill();
+      ctx.fillStyle = 'rgba(15,23,42,0.75)';
+      ctx.fillText(text, x+19, y-0.5);
+      ctx.restore();
+    }
+
     function draw(ts) {
       ctx.clearRect(0, 0, W, H);
       const t = (ts % CYCLE) / CYCLE;
 
+      // Phases: 0.00-0.05 fadein | 0.05-0.46 scan | 0.46-0.64 organize | 0.64-0.80 clarity | 0.80-1.00 fadeout
+      const scanP = sm(rng(t, 0.05, 0.46));
+      const scanY = scanP * (H + 20);
+
+      if (t >= 0.05 && t < 0.46) drawScan(scanY);
+
       grid.forEach((d, i) => {
-        // Fade dots near the portrait (right column, vertically centred)
-        const nearPortrait = d.cf > 0.52 && d.rf > 0.15 && d.rf < 0.85;
-        const dim = nearPortrait ? 0.18 : 1.0;
+        const right = d.cf > 0.47;          // right side: vivid
+        const xm    = right ? 1.0 : 0.20;  // left side: very subtle
 
         let color = C.base, alpha = 0;
 
-        if (t < 0.10) {
-          alpha = 0.06 * sm(rng(t,0,0.10)) * dim;
+        if (t < 0.05) {
+          alpha = 0.07 * sm(rng(t,0,0.05)) * xm;
 
-        } else if (t < 0.33) {
-          if (issues.has(i)) {
-            const pulse = 0.45 + 0.22 * Math.sin(ts/400 + i*0.6);
-            alpha = lerp(0.06, pulse, sm(rng(t,0.10,0.22))) * dim;
+        } else if (t < 0.46) {
+          const scanned = d.y <= scanY;
+          if (scanned && issues.has(i)) {
+            const pulse = 0.50 + 0.28 * Math.sin(ts/370 + i*0.65);
+            alpha = pulse * (right ? 1 : 0.25);
             color = C.orange;
           } else {
-            alpha = 0.06 * dim;
+            alpha = scanned ? (right ? 0.14 : 0.07) : 0.07 * xm;
           }
 
-        } else if (t < 0.57) {
-          const org = sm(rng(t,0.33,0.57));
+        } else if (t < 0.64) {
+          const org = sm(rng(t, 0.46, 0.64));
           const fc  = issues.has(i) ? C.orange : C.base;
-          const fa  = issues.has(i) ? 0.50 : 0.06;
+          const fa  = issues.has(i) ? (right?0.55:0.12) : 0.07*xm;
           let tc, ta;
-          if      (d.rf < 0.33) { tc=C.orange; ta=0.55; }
-          else if (d.rf < 0.66) { tc=C.amber;  ta=0.42; }
-          else                  { tc=C.green;  ta=0.34; }
+          if      (d.rf < 0.33) { tc=C.orange; ta=right?0.78:0.16; }
+          else if (d.rf < 0.66) { tc=C.amber;  ta=right?0.60:0.12; }
+          else                  { tc=C.green;  ta=right?0.48:0.10; }
           color = [lerp(fc[0],tc[0],org), lerp(fc[1],tc[1],org), lerp(fc[2],tc[2],org)];
-          alpha = lerp(fa, ta, org) * dim;
+          alpha = lerp(fa, ta, org);
 
-        } else if (t < 0.77) {
-          const shim = 1 + 0.025 * Math.sin(ts/1000 + d.cf*5);
-          if      (d.rf < 0.33) { color=C.orange; alpha=0.55*shim*dim; }
-          else if (d.rf < 0.66) { color=C.amber;  alpha=0.42*shim*dim; }
-          else                  { color=C.green;  alpha=0.34*shim*dim; }
+        } else if (t < 0.80) {
+          const shim = 1 + 0.025*Math.sin(ts/900 + d.cf*5);
+          if      (d.rf < 0.33) { color=C.orange; alpha=(right?0.78:0.16)*shim; }
+          else if (d.rf < 0.66) { color=C.amber;  alpha=(right?0.60:0.12)*shim; }
+          else                  { color=C.green;  alpha=(right?0.48:0.10)*shim; }
 
         } else {
-          const fade = 1 - sm(rng(t,0.77,0.97));
-          if      (d.rf < 0.33) { color=C.orange; alpha=0.55*fade*dim; }
-          else if (d.rf < 0.66) { color=C.amber;  alpha=0.42*fade*dim; }
-          else                  { color=C.green;  alpha=0.34*fade*dim; }
+          const fade = 1 - sm(rng(t, 0.80, 0.97));
+          if      (d.rf < 0.33) { color=C.orange; alpha=(right?0.78:0.16)*fade; }
+          else if (d.rf < 0.66) { color=C.amber;  alpha=(right?0.60:0.12)*fade; }
+          else                  { color=C.green;  alpha=(right?0.48:0.10)*fade; }
         }
 
         drawDot(d.x, d.y, color, alpha);
       });
 
       ctx.globalAlpha = 1;
+
+      // Pills appear bottom-left (below all content) as scan sweeps past them
+      const py  = H * 0.86;
+      const px1 = W * 0.02, px2 = W * 0.14, px3 = W * 0.28;
+
+      if (t >= 0.34 && t < 0.46) {
+        const fo = 1 - sm(rng(t, 0.43, 0.46));
+        drawPill('No owner',        px1, py, C.orange, Math.min(sm(rng(t,0.34,0.37)), fo));
+        drawPill('Missing context',  px2, py, C.orange, Math.min(sm(rng(t,0.37,0.40)), fo));
+        drawPill('Unreviewed risk',  px3, py, C.orange, Math.min(sm(rng(t,0.40,0.43)), fo));
+      }
+
+      if (t >= 0.66 && t < 0.80) {
+        const fi = sm(rng(t,0.66,0.70)), fo = 1 - sm(rng(t,0.77,0.80));
+        const la = Math.min(fi, fo);
+        drawPill('Critical · 3',  px1, py, C.orange, la);
+        drawPill('Review · 12',   px2, py, C.amber,  la);
+        drawPill('Resolved · 28', px3, py, C.green,  la);
+      }
+
       requestAnimationFrame(draw);
     }
 
