@@ -265,23 +265,16 @@
     }
 
     .hero-portrait-ring::before {
-      content: "";
-      position: absolute;
-      inset: -6px;
-      border-radius: 30px;
-      border: 2px solid var(--orange-200);
-      z-index: 0;
+      display: none;
     }
 
     .hero-portrait {
-      width: 340px;
-      height: 340px;
-      border-radius: 24px;
-      object-fit: cover;
-      object-position: center top;
+      width: 360px;
+      height: 360px;
+      border-radius: 0;
+      object-fit: contain;
       position: relative;
       z-index: 1;
-      box-shadow: 0 20px 60px rgba(249, 115, 22, 0.12);
     }
 
     .btn-primary {
@@ -1578,7 +1571,7 @@
       <div class="hero-portrait-wrapper load-reveal load-delay-3">
         <div class="hero-portrait-halo"></div>
         <div class="hero-portrait-ring">
-          <img src="Mina Profile.jpg" alt="Mina Shahriari" class="hero-portrait">
+          <img src="my foto.png" alt="Mina Shahriari" class="hero-portrait">
         </div>
       </div>
     </div>
