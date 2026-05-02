@@ -175,6 +175,8 @@
       grid-template-columns: 1fr 420px;
       gap: 64px;
       align-items: center;
+      position: relative;
+      z-index: 1;
     }
 
     .hero-content {
@@ -1062,6 +1064,16 @@
       text-align: center;
     }
 
+    /* ─── HERO CANVAS ─── */
+    #hero-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
     /* ─── TYPEWRITER ─── */
     @keyframes blink {
       0%, 100% { opacity: 1; }
@@ -1448,6 +1460,7 @@
 
   <!-- HERO -->
   <section class="hero">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
     <div class="container">
       <div class="hero-content">
         <div class="hero-role load-reveal load-delay-1">Product Designer <span class="hero-role-accent">&mdash;</span> Cybersecurity &amp; SaaS</div>
@@ -1620,6 +1633,167 @@
       <div class="footer-copy">&copy; 2025 Mina Shahriari</div>
     </div>
   </footer>
+
+  <!-- HERO CANVAS ANIMATION -->
+  <script>
+  (function () {
+    const canvas = document.getElementById('hero-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+
+    const C = {
+      base:   [15,  23,  42],
+      orange: [249, 115, 22],
+      amber:  [251, 191, 36],
+      green:  [52,  211, 153],
+    };
+    const DOT = 4, GAP = 28, CYCLE = 14000;
+    let W, H, grid, issues;
+
+    function toRgba(c, a) { return `rgba(${c[0]},${c[1]},${c[2]},${Math.max(0,Math.min(1,a)).toFixed(3)})`; }
+    function lerp(a, b, t) { return a + (b - a) * t; }
+    function sm(t) { t = Math.max(0, Math.min(1, t)); return t * t * (3 - 2 * t); }
+    function rng(t, a, b) { return Math.max(0, Math.min(1, (t - a) / (b - a))); }
+
+    function resize() {
+      const hero = canvas.closest('.hero');
+      W = canvas.width  = hero.offsetWidth;
+      H = canvas.height = hero.offsetHeight;
+      build();
+    }
+
+    function build() {
+      grid = [];
+      const cols = Math.ceil(W / GAP) + 1;
+      const rows = Math.ceil(H / GAP) + 1;
+      for (let r = 0; r < rows; r++)
+        for (let c = 0; c < cols; c++)
+          grid.push({ x: c * GAP, y: r * GAP,
+                      rf: rows > 1 ? r / (rows - 1) : 0.5,
+                      cf: cols > 1 ? c / (cols - 1) : 0.5 });
+      const n = Math.floor(grid.length * 0.11);
+      issues = new Set();
+      while (issues.size < n) issues.add(Math.floor(Math.random() * grid.length));
+    }
+
+    function drawDot(x, y, c, a) {
+      if (a < 0.005) return;
+      ctx.globalAlpha = Math.min(1, a);
+      ctx.fillStyle = Array.isArray(c) ? toRgba(c, 1) : c;
+      ctx.beginPath();
+      if (ctx.roundRect) ctx.roundRect(x - DOT/2, y - DOT/2, DOT, DOT, 1.2);
+      else ctx.rect(x - DOT/2, y - DOT/2, DOT, DOT);
+      ctx.fill();
+    }
+
+    function drawPill(text, x, y, dotC, a) {
+      if (a < 0.02) return;
+      ctx.save();
+      ctx.globalAlpha = a;
+      ctx.font = '500 10.5px "Plus Jakarta Sans", sans-serif';
+      const tw = ctx.measureText(text).width;
+      const pw = tw + 26, ph = 20;
+      ctx.fillStyle = 'rgba(255,255,255,0.90)';
+      ctx.beginPath();
+      if (ctx.roundRect) ctx.roundRect(x, y - 14, pw, ph, 10);
+      else ctx.rect(x, y - 14, pw, ph);
+      ctx.fill();
+      ctx.fillStyle = toRgba(dotC, 1);
+      ctx.beginPath(); ctx.arc(x + 10, y - 4, 3.5, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = 'rgba(15,23,42,0.78)';
+      ctx.fillText(text, x + 20, y - 0.5);
+      ctx.restore();
+    }
+
+    function draw(ts) {
+      ctx.clearRect(0, 0, W, H);
+      const t = (ts % CYCLE) / CYCLE; // 0..1 per cycle
+
+      // Phase map
+      // 0.00–0.10  fade in (base)
+      // 0.10–0.33  chaos   (random issues)
+      // 0.33–0.57  organize (rows by priority)
+      // 0.57–0.77  clarity  (hold)
+      // 0.77–1.00  fade out
+
+      grid.forEach((d, i) => {
+        const leftArea = d.cf < 0.46;
+        let color = C.base, alpha = 0;
+
+        if (t < 0.10) {
+          alpha = 0.07 * sm(rng(t, 0, 0.10)) * (leftArea ? 0.3 : 1);
+          color = C.base;
+
+        } else if (t < 0.33) {
+          const xm = leftArea ? 0.3 : 1;
+          if (issues.has(i)) {
+            const emerge = sm(rng(t, 0.10, 0.21));
+            const pulse  = 0.55 + 0.28 * Math.sin(ts / 390 + i * 0.6);
+            alpha = lerp(0.07, pulse, emerge) * xm;
+            color = C.orange;
+          } else {
+            alpha = 0.07 * xm;
+            color = C.base;
+          }
+
+        } else if (t < 0.57) {
+          const org = sm(rng(t, 0.33, 0.57));
+          const xm  = leftArea ? 0.28 : 1;
+          const fc  = issues.has(i) ? C.orange : C.base;
+          const fa  = issues.has(i) ? 0.60 : 0.07;
+          let tc, ta;
+          if      (d.rf < 0.33) { tc = C.orange; ta = 0.80; }
+          else if (d.rf < 0.66) { tc = C.amber;  ta = 0.62; }
+          else                  { tc = C.green;  ta = 0.52; }
+          color = [lerp(fc[0], tc[0], org), lerp(fc[1], tc[1], org), lerp(fc[2], tc[2], org)];
+          alpha = lerp(fa, ta, org) * xm;
+
+        } else if (t < 0.77) {
+          const xm  = leftArea ? 0.28 : 1;
+          const shim = 1 + 0.03 * Math.sin(ts / 900 + d.cf * 5);
+          if      (d.rf < 0.33) { color = C.orange; alpha = 0.80 * shim * xm; }
+          else if (d.rf < 0.66) { color = C.amber;  alpha = 0.62 * shim * xm; }
+          else                  { color = C.green;  alpha = 0.52 * shim * xm; }
+
+        } else {
+          const fade = 1 - sm(rng(t, 0.77, 0.97));
+          const xm   = leftArea ? 0.28 : 1;
+          if      (d.rf < 0.33) { color = C.orange; alpha = 0.80 * fade * xm; }
+          else if (d.rf < 0.66) { color = C.amber;  alpha = 0.62 * fade * xm; }
+          else                  { color = C.green;  alpha = 0.52 * fade * xm; }
+        }
+
+        drawDot(d.x, d.y, color, alpha);
+      });
+
+      ctx.globalAlpha = 1;
+
+      // Chaos pills
+      if (t >= 0.16 && t < 0.33) {
+        const fi = sm(rng(t, 0.16, 0.22)), fo = 1 - sm(rng(t, 0.29, 0.33));
+        const la = Math.min(fi, fo) * 0.82;
+        drawPill('No owner assigned',     W * 0.58, H * 0.27, C.orange, la);
+        drawPill('Unreviewed · 43 days',  W * 0.65, H * 0.60, C.orange, la * 0.9);
+        drawPill('Missing context',        W * 0.54, H * 0.80, C.orange, la * 0.85);
+      }
+
+      // Clear pills — three priority bands
+      if (t >= 0.61 && t < 0.77) {
+        const fi = sm(rng(t, 0.61, 0.66)), fo = 1 - sm(rng(t, 0.74, 0.77));
+        const la = Math.min(fi, fo);
+        drawPill('Critical · 8',       W * 0.58, H * 0.18, C.orange, la);
+        drawPill('Needs review · 19',  W * 0.58, H * 0.52, C.amber,  la);
+        drawPill('Clear · 24',         W * 0.58, H * 0.82, C.green,  la);
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+    requestAnimationFrame(draw);
+  })();
+  </script>
 
   <!-- TYPEWRITER -->
   <script>
