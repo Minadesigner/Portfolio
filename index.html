@@ -240,6 +240,7 @@
       display: flex;
       align-items: center;
       gap: 16px;
+      margin-top: 36px;
     }
 
     /* Hero Portrait */
@@ -1059,6 +1060,55 @@
       text-align: center;
     }
 
+    /* ─── HOW I DESIGN ─── */
+    .how-i-design { background: var(--white); }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .process-card {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+    }
+
+    .process-card:hover {
+      border-color: var(--orange-200);
+      box-shadow: 0 8px 28px -8px rgba(249, 115, 22, 0.14);
+      transform: translateY(-2px);
+    }
+
+    .process-num {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--orange-500);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .process-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--gray-900);
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .process-body {
+      font-size: 14px;
+      color: var(--gray-500);
+      line-height: 1.75;
+    }
+
     /* ─── ANIMATIONS ─── */
     .fade-in {
       opacity: 0;
@@ -1100,6 +1150,8 @@
       .container {
         padding: 0 32px;
       }
+
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
 
       .hero .container {
         grid-template-columns: 1fr;
@@ -1343,6 +1395,8 @@
         margin-bottom: 12px;
       }
 
+      .process-grid { grid-template-columns: 1fr; gap: 16px; }
+
       /* Onboarding mock */
       .case-mock-onboarding {
         padding: 16px;
@@ -1368,6 +1422,7 @@
       <a href="#" class="nav-logo"><span class="nav-avatar">M</span>Mina Shahriari</a>
       <ul class="nav-links">
         <li><a href="#work">Work</a></li>
+        <li><a href="#process">Process</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="resume.pdf" target="_blank" class="nav-cta">Resume <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" style="vertical-align: -2px;"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a></li>
       </ul>
@@ -1380,8 +1435,12 @@
       <div class="hero-content">
         <div class="hero-role load-reveal load-delay-1">Product Designer <span class="hero-role-accent">&mdash;</span> Cybersecurity &amp; SaaS</div>
         <h1 class="hero-name load-reveal load-delay-2"><span class="name-first">Mina</span> <span class="name-last">Shahriari</span></h1>
-        <h2 class="load-reveal load-delay-3">Designing scalable systems for complex products</h2>
-        <p class="hero-sub load-reveal load-delay-4">I design data-heavy SaaS platforms that help teams <span style="font-weight: 600;">understand risk</span>, <span style="font-weight: 600;">prioritize actions</span>, and <span style="font-weight: 600;">make confident decisions</span>.</p>
+        <h2 class="load-reveal load-delay-3">I turn complexity into <span class="accent">clarity</span>.</h2>
+        <p class="hero-sub load-reveal load-delay-4">I design for people who work inside complexity — where every screen needs to help them understand risk, make decisions, and act with confidence.</p>
+        <div class="hero-actions load-reveal load-delay-5">
+          <a href="#work" class="btn-primary">View case studies <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a href="#contact" class="btn-secondary">Let's talk</a>
+        </div>
       </div>
 
       <!-- Hero Portrait -->
@@ -1400,7 +1459,7 @@
       <div class="cases-header">
         <div>
           <div class="section-label">Work</div>
-          <div class="about-opener">Selected Product Design</div>
+          <div class="about-opener">Complex systems I made <span class="accent">clearer</span></div>
         </div>
       </div>
 
@@ -1469,6 +1528,37 @@
             <blockquote class="case-quote">"Supplier onboarding time reduced from ~3 minutes to ~30 seconds — an 83% improvement."</blockquote>
           </div>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW I DESIGN -->
+  <section class="how-i-design section" id="process">
+    <div class="container">
+      <div class="section-label">Process</div>
+      <div class="section-title">How I design <span class="accent">clarity</span></div>
+      <p class="section-subtitle">My approach isn't about screens — it's about understanding the system before I touch the interface.</p>
+      <div class="process-grid">
+        <div class="process-card fade-in">
+          <div class="process-num">01</div>
+          <h4 class="process-title">Understand the system</h4>
+          <p class="process-body">I map users, workflows, risk signals, and business constraints before touching the UI.</p>
+        </div>
+        <div class="process-card fade-in">
+          <div class="process-num">02</div>
+          <h4 class="process-title">Separate the layers</h4>
+          <p class="process-body">I break complex products into clear layers: context, controls, summary, workspace, and detail.</p>
+        </div>
+        <div class="process-card fade-in">
+          <div class="process-num">03</div>
+          <h4 class="process-title">Design for decisions</h4>
+          <p class="process-body">I focus on what users need to understand, prioritize, and act on — not just what they need to see.</p>
+        </div>
+        <div class="process-card fade-in">
+          <div class="process-num">04</div>
+          <h4 class="process-title">Make complexity usable</h4>
+          <p class="process-body">I reduce cognitive load without hiding power — so expert users stay in control.</p>
+        </div>
       </div>
     </div>
   </section>
