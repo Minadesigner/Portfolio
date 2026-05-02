@@ -1062,6 +1062,22 @@
       text-align: center;
     }
 
+    /* ─── TYPEWRITER ─── */
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0; }
+    }
+
+    .typewriter-cursor {
+      display: inline-block;
+      color: var(--orange-500);
+      font-weight: 400;
+      margin-left: 2px;
+      animation: blink 0.9s step-start infinite;
+    }
+
+    .typewriter-cursor.done { animation: none; opacity: 0; }
+
     /* ─── HOW I DESIGN ─── */
     .how-i-design { background: var(--white); }
 
@@ -1436,7 +1452,7 @@
       <div class="hero-content">
         <div class="hero-role load-reveal load-delay-1">Product Designer <span class="hero-role-accent">&mdash;</span> Cybersecurity &amp; SaaS</div>
         <h1 class="hero-name load-reveal load-delay-2"><span class="name-first">Mina</span> <span class="name-last">Shahriari</span></h1>
-        <h2 class="load-reveal load-delay-3">I turn complexity into <span class="accent">clarity</span>.</h2>
+        <h2 class="load-reveal load-delay-3">I turn complexity into <span class="accent" id="typewriter-target"></span><span class="typewriter-cursor">|</span></h2>
         <p class="hero-sub load-reveal load-delay-4">I design for people who work inside complexity — where every screen needs to help them understand risk, make decisions, and act with confidence.</p>
         <div class="hero-actions load-reveal load-delay-5">
           <a href="#work" class="btn-primary">View case studies <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
@@ -1604,6 +1620,39 @@
       <div class="footer-copy">&copy; 2025 Mina Shahriari</div>
     </div>
   </footer>
+
+  <!-- TYPEWRITER -->
+  <script>
+    (function () {
+      const words  = ['clarity.', 'confidence.', 'action.', 'clarity.'];
+      const target = document.getElementById('typewriter-target');
+      const cursor = document.querySelector('.typewriter-cursor');
+      let   wi = 0, ci = 0, deleting = false;
+
+      function tick() {
+        const word    = words[wi];
+        const current = deleting ? word.slice(0, ci--) : word.slice(0, ci++);
+        target.textContent = current;
+
+        if (!deleting && ci > word.length) {
+          if (wi === words.length - 1) { cursor.classList.add('done'); return; }
+          deleting = true;
+          setTimeout(tick, 1400);
+          return;
+        }
+        if (deleting && ci < 0) {
+          deleting = false;
+          wi = (wi + 1) % words.length;
+          ci = 0;
+          setTimeout(tick, 300);
+          return;
+        }
+        setTimeout(tick, deleting ? 45 : 80);
+      }
+
+      setTimeout(tick, 2200);
+    })();
+  </script>
 
   <!-- SCROLL ANIMATION -->
   <script>
