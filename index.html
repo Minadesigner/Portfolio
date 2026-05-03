@@ -2091,11 +2091,11 @@
     function build() {
       const mobile  = W < 600;
       const gap     = mobile ? 58 : 44;
-      const colStart = mobile ? 0 : Math.floor(W * 0.40 / gap);
+      // Grid nodes start at right 45% on desktop — clear of hero text
+      const colStart = mobile ? 0 : Math.floor(W * 0.57 / gap);
       const cols    = Math.ceil(W / gap) + 1;
       const rows    = Math.ceil(H / gap) + 1;
 
-      // Grid nodes — right half on desktop, full width on mobile
       gridPts = [];
       for (let r = 0; r < rows; r++)
         for (let c = colStart; c < cols; c++)
@@ -2105,14 +2105,15 @@
       const lbls   = mobile ? ALL_LABELS.slice(0, 4) : ALL_LABELS;
       const n      = lbls.length;
       const colCnt = mobile ? 2 : 3;
-      const colW   = mobile ? 108 : 135;
-      const ox0    = mobile ? W * 0.38 : W * 0.52;
-      const oy0    = mobile ? H * 0.60 : H * 0.16;
+      const colW   = mobile ? 108 : 128;
+      // Ordered: anchor from right edge so labels sit clearly in the right region
+      const ox0    = mobile ? W * 0.38 : Math.max(W * 0.63, W - 440);
+      const oy0    = mobile ? H * 0.60 : H * 0.20;
       const rowH   = mobile ? 50 : 58;
 
       signals = lbls.map((text, i) => {
-        // Deterministic chaos positions (no random — stable across redraws)
-        const cx = W * (0.40 + ((i * 13 + 7)  % 53) / 53 * 0.52);
+        // Chaos: scatter only in right 40% — never over the hero text
+        const cx = W * (0.60 + ((i * 13 + 7)  % 53) / 53 * 0.34);
         const cy = H * (0.10 + ((i * 17 + 5)  % 73) / 73 * 0.80);
         const cr = (((i * 11) % 20) - 10) * 0.016;
         // Ordered grid positions
@@ -2121,7 +2122,7 @@
         const oy  = oy0 + row * rowH;
         return {
           text, cx, cy, cr, ox, oy,
-          revealT: 0.07 + (i / n) * 0.34, // staggered reveal timing
+          revealT: 0.07 + (i / n) * 0.34,
           key: text === 'Risk' || text === 'Decision',
         };
       });
@@ -2132,7 +2133,7 @@
     function drawGridLines(alpha) {
       if (alpha < 0.002) return;
       const gap    = W < 600 ? 58 : 44;
-      const startX = W < 600 ? 0 : W * 0.40;
+      const startX = W < 600 ? 0 : W * 0.57;
       ctx.save();
       ctx.strokeStyle = `rgba(100,116,139,${(alpha * 0.10).toFixed(3)})`;
       ctx.lineWidth   = 0.5;
