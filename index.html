@@ -952,8 +952,11 @@
       background: var(--white);
     }
 
-    .about-inner {
-      max-width: 640px;
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 80px;
+      align-items: center;
     }
 
     .about-opener {
@@ -982,6 +985,82 @@
     .about-body strong {
       font-weight: 600;
       color: var(--gray-900);
+    }
+
+    /* ─── ABOUT VISUAL (right column) ─── */
+    .about-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .about-photo-wrap {
+      position: relative;
+      display: inline-block;
+    }
+
+    .about-photo {
+      width: 320px;
+      height: 380px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 20px;
+      border: 1px solid var(--gray-200);
+      display: block;
+      box-shadow: 0 24px 56px -16px rgba(0,0,0,0.10);
+    }
+
+    /* ─── ABOUT BADGE ─── */
+    .about-badge {
+      position: absolute;
+      bottom: -22px;
+      left: -28px;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 14px 18px 14px 14px;
+      box-shadow: 0 12px 36px -8px rgba(0,0,0,0.10);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 210px;
+      z-index: 2;
+    }
+
+    #about-badge-canvas {
+      display: block;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-100);
+    }
+
+    .about-badge-text {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .about-badge-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+    }
+
+    .about-badge-value {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--gray-900);
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+
+    .about-badge-value .badge-arrow {
+      color: var(--orange-500);
+      font-weight: 800;
+      margin: 0 2px;
     }
 
     /* ─── FOOTER ─── */
@@ -1233,6 +1312,74 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* ─── CLARITY WORD GLOW ─── */
+    #typewriter-target.clarity-active {
+      background: linear-gradient(transparent 62%, rgba(249,115,22,0.18) 62%);
+      border-radius: 3px;
+      padding: 0 2px;
+      transition: background 0.5s ease;
+    }
+
+    /* ─── CARD HOVER SCAN EFFECT ─── */
+    .case-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -3px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, rgba(249,115,22,0.45) 35%, rgba(249,115,22,0.65) 50%, rgba(249,115,22,0.45) 65%, transparent 100%);
+      box-shadow: 0 0 10px rgba(249,115,22,0.22);
+      pointer-events: none;
+      z-index: 2;
+      opacity: 0;
+    }
+
+    .case-card:hover::before {
+      opacity: 1;
+      animation: card-scan-sweep 0.58s ease-out forwards;
+    }
+
+    @keyframes card-scan-sweep {
+      0%   { top: -3px; opacity: 1; }
+      85%  { opacity: 1; }
+      100% { top: 103%; opacity: 0; }
+    }
+
+    .case-clarity-label {
+      position: absolute;
+      bottom: 16px;
+      right: 20px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--orange-600);
+      background: var(--orange-50);
+      border: 1px solid var(--orange-200);
+      border-radius: 100px;
+      padding: 4px 10px;
+      opacity: 0;
+      transform: translateY(5px);
+      transition: opacity 0.22s ease 0.14s, transform 0.22s ease 0.14s;
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    .case-card:hover .case-clarity-label {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── REDUCED MOTION ─── */
+    @media (prefers-reduced-motion: reduce) {
+      #hero-canvas { opacity: 0.5; }
+      .case-card::before { display: none; }
+      .case-card:hover .case-clarity-label { transition: none; opacity: 1; transform: none; }
+      .load-reveal { animation: none; opacity: 1; }
+      .fade-in { transition: none; }
+    }
     /* ─── STAGGERED LOAD REVEAL ─── */
     @keyframes loadReveal {
       from {
@@ -1262,6 +1409,20 @@
     @media (max-width: 900px) {
       .container {
         padding: 0 32px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 56px;
+      }
+
+      .about-visual {
+        order: -1;
+      }
+
+      .about-photo {
+        width: 260px;
+        height: 310px;
       }
 
       .process-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1444,6 +1605,21 @@
       }
 
       /* About */
+      .about-grid { gap: 40px; }
+
+      .about-photo {
+        width: 220px;
+        height: 264px;
+      }
+
+      .about-badge {
+        bottom: -16px;
+        left: -16px;
+        padding: 10px 14px 10px 10px;
+        min-width: 180px;
+        gap: 10px;
+      }
+
       .about-opener {
         font-size: 22px;
         margin-bottom: 20px;
@@ -1590,6 +1766,7 @@
       <div class="cases-grid">
         <!-- Case 1 -->
         <a href="tprm-case-study.html" class="case-card case-card--reverse fade-in">
+          <div class="case-clarity-label">Complexity → Clarity</div>
           <div class="case-arrow-btn" aria-hidden="true">
             <svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
           </div>
@@ -1611,6 +1788,7 @@
 
         <!-- Case 2 -->
         <a href="onboarding-case-study.html" class="case-card fade-in">
+          <div class="case-clarity-label">Complexity → Clarity</div>
           <div class="case-arrow-btn" aria-hidden="true">
             <svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
           </div>
@@ -1690,20 +1868,39 @@
   <!-- ABOUT -->
   <section class="about section" id="about">
     <div class="container">
-      <div class="about-inner">
-        <div class="section-label">About</div>
-        <div class="about-opener">One designer. The whole product. Complex B2B.</div>
-        <div class="about-body">
-          <p>My design journey started in <strong>architecture</strong> — where every solution had to work for people, respect constraints, and hold up at scale. That thinking never left me.</p>
-          <p>Today I work as the sole designer on a <strong>cybersecurity platform</strong> — collaborating with CEOs, CFOs, and engineers to turn hard problems into interfaces that <strong>expert users</strong> can actually work with.</p>
-          <p>What drives me is <strong>creation</strong> — building something from nothing, and knowing it makes someone's difficult job a little clearer.</p>
+      <div class="about-grid">
+
+        <!-- Left: text -->
+        <div class="about-text fade-in">
+          <div class="section-label">About</div>
+          <div class="about-opener">One designer. The whole product. Complex B2B.</div>
+          <div class="about-body">
+            <p>My design journey started in <strong>architecture</strong> — where every solution had to work for people, respect constraints, and hold up at scale. That thinking never left me.</p>
+            <p>Today I work as the sole designer on a <strong>cybersecurity platform</strong> — collaborating with CEOs, CFOs, and engineers to turn hard problems into interfaces that <strong>expert users</strong> can actually work with.</p>
+            <p>What drives me is <strong>creation</strong> — building something from nothing, and knowing it makes someone's difficult job a little clearer.</p>
+          </div>
+          <div id="contact">
+            <a href="mailto:hello@minashahriari.com" class="btn-primary">
+              Let's talk
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </a>
+          </div>
         </div>
-        <div id="contact">
-          <a href="mailto:hello@minashahriari.com" class="btn-primary">
-            Let's talk
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
+
+        <!-- Right: photo + animated badge -->
+        <div class="about-visual fade-in">
+          <div class="about-photo-wrap">
+            <img src="mina-profile.jpg" alt="Mina Shahriari" class="about-photo">
+            <div class="about-badge">
+              <canvas id="about-badge-canvas" width="64" height="64" aria-hidden="true"></canvas>
+              <div class="about-badge-text">
+                <span class="about-badge-label">Design identity</span>
+                <span class="about-badge-value">Complexity<span class="badge-arrow"> → </span>Clarity</span>
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -1910,174 +2107,234 @@
   })();
   </script>
 
-  <!-- HERO CANVAS -->
+  <!-- HERO CANVAS — Scan to Clarity -->
   <script>
   (function () {
     const canvas = document.getElementById('hero-canvas');
     if (!canvas) return;
-    const ctx = canvas.getContext('2d');
+    const ctx     = canvas.getContext('2d');
+    const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const CYCLE   = 16000; // ms per full loop
 
-    const C = { base:[15,23,42], orange:[249,115,22], amber:[251,191,36], green:[52,211,153] };
-    const DOT = 3.5, GAP = 28, CYCLE = 11000;
-    let W, H, grid, issues;
+    const ALL_LABELS = ['Risk', 'Audit', 'Supplier', 'Evidence', 'Compliance', 'Finding', 'Decision'];
+    let W, H, gridPts, signals;
 
-    const rgba = (c,a) => `rgba(${c[0]},${c[1]},${c[2]},${Math.max(0,Math.min(1,a)).toFixed(3)})`;
-    const lerp = (a,b,t) => a+(b-a)*t;
-    const sm   = t => { t=Math.max(0,Math.min(1,t)); return t*t*(3-2*t); };
-    const rng  = (t,a,b) => Math.max(0,Math.min(1,(t-a)/(b-a)));
+    const sm   = t => { t = Math.max(0, Math.min(1, t)); return t * t * (3 - 2 * t); };
+    const rng  = (t, a, b) => Math.max(0, Math.min(1, (t - a) / (b - a)));
+    const lerp = (a, b, t) => a + (b - a) * t;
 
     function resize() {
       const hero = canvas.closest('.hero');
       W = canvas.width  = hero.offsetWidth;
       H = canvas.height = hero.offsetHeight;
       build();
+      if (REDUCED) renderStatic();
     }
 
     function build() {
-      grid = [];
-      const cols = Math.ceil(W/GAP)+1, rows = Math.ceil(H/GAP)+1;
-      for (let r=0; r<rows; r++)
-        for (let c=0; c<cols; c++)
-          grid.push({ x:c*GAP, y:r*GAP,
-                      rf: rows>1 ? r/(rows-1) : 0.5,
-                      cf: cols>1 ? c/(cols-1) : 0.5 });
-      const n = Math.floor(grid.length * 0.11);
-      issues = new Set();
-      while (issues.size < n) issues.add(Math.floor(Math.random()*grid.length));
+      const mobile  = W < 600;
+      const gap     = mobile ? 58 : 44;
+      const colStart = mobile ? 0 : Math.floor(W * 0.40 / gap);
+      const cols    = Math.ceil(W / gap) + 1;
+      const rows    = Math.ceil(H / gap) + 1;
+
+      // Grid nodes — right half on desktop, full width on mobile
+      gridPts = [];
+      for (let r = 0; r < rows; r++)
+        for (let c = colStart; c < cols; c++)
+          gridPts.push({ x: c * gap, y: r * gap, ph: (r * cols + c) * 0.41 });
+
+      // Signal labels
+      const lbls   = mobile ? ALL_LABELS.slice(0, 4) : ALL_LABELS;
+      const n      = lbls.length;
+      const colCnt = mobile ? 2 : 3;
+      const colW   = mobile ? 108 : 135;
+      const ox0    = mobile ? W * 0.38 : W * 0.52;
+      const oy0    = mobile ? H * 0.60 : H * 0.16;
+      const rowH   = mobile ? 50 : 58;
+
+      signals = lbls.map((text, i) => {
+        // Deterministic chaos positions (no random — stable across redraws)
+        const cx = W * (0.40 + ((i * 13 + 7)  % 53) / 53 * 0.52);
+        const cy = H * (0.10 + ((i * 17 + 5)  % 73) / 73 * 0.80);
+        const cr = (((i * 11) % 20) - 10) * 0.016;
+        // Ordered grid positions
+        const col = i % colCnt, row = Math.floor(i / colCnt);
+        const ox  = ox0 + col * colW;
+        const oy  = oy0 + row * rowH;
+        return {
+          text, cx, cy, cr, ox, oy,
+          revealT: 0.07 + (i / n) * 0.34, // staggered reveal timing
+          key: text === 'Risk' || text === 'Decision',
+        };
+      });
     }
 
-    function drawDot(x, y, c, a) {
-      if (a < 0.004) return;
-      ctx.globalAlpha = Math.min(1, a);
-      ctx.fillStyle = Array.isArray(c) ? rgba(c,1) : c;
-      ctx.beginPath();
-      if (ctx.roundRect) ctx.roundRect(x-DOT/2, y-DOT/2, DOT, DOT, 1);
-      else ctx.rect(x-DOT/2, y-DOT/2, DOT, DOT);
-      ctx.fill();
-    }
+    // ── Primitives ──────────────────────────────────────────────────
 
-    function drawScan(y) {
-      if (y < 0 || y > H+10) return;
-      const grad = ctx.createLinearGradient(0, y-70, 0, y+2);
-      grad.addColorStop(0, 'rgba(249,115,22,0)');
-      grad.addColorStop(1, 'rgba(249,115,22,0.06)');
-      ctx.fillStyle = grad;
-      ctx.fillRect(0, y-70, W, 72);
+    function drawGridLines(alpha) {
+      if (alpha < 0.002) return;
+      const gap    = W < 600 ? 58 : 44;
+      const startX = W < 600 ? 0 : W * 0.40;
       ctx.save();
-      ctx.globalAlpha = 0.40;
+      ctx.strokeStyle = `rgba(100,116,139,${(alpha * 0.10).toFixed(3)})`;
+      ctx.lineWidth   = 0.5;
+      for (let x = Math.ceil(startX / gap) * gap; x <= W; x += gap) {
+        ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+      }
+      for (let y = 0; y <= H; y += gap) {
+        ctx.beginPath(); ctx.moveTo(startX, y); ctx.lineTo(W, y); ctx.stroke();
+      }
+      ctx.restore();
+    }
+
+    function drawNodes(scanY, t, ts) {
+      ctx.save();
+      gridPts.forEach(p => {
+        const near    = t > 0.05 && t < 0.57 && Math.abs(p.y - scanY) < 22;
+        const scanned = p.y < scanY;
+        let a = 0, r = 1.4, fill = 'rgba(100,116,139,1)';
+
+        if (t < 0.05) {
+          a = 0.07 * sm(rng(t, 0, 0.05));
+        } else if (t < 0.57) {
+          if (near)         { a = 0.48; r = 2.0; fill = 'rgba(249,115,22,0.75)'; }
+          else if (scanned) { a = 0.13; }
+          else              { a = 0.05; }
+        } else if (t < 0.88) {
+          a = (0.09 + 0.03 * Math.sin(ts / 2400 + p.ph)) * (1 - sm(rng(t, 0.84, 0.88)));
+        }
+
+        if (a < 0.005) return;
+        ctx.globalAlpha = a;
+        ctx.fillStyle   = fill;
+        ctx.beginPath(); ctx.arc(p.x, p.y, r, 0, Math.PI * 2); ctx.fill();
+      });
+      ctx.globalAlpha = 1;
+      ctx.restore();
+    }
+
+    function drawScanLine(scanY, t) {
+      const a = sm(rng(t, 0.05, 0.11)) * (1 - sm(rng(t, 0.50, 0.57)));
+      if (a < 0.01) return;
+      const grad = ctx.createLinearGradient(0, scanY - 100, 0, scanY + 2);
+      grad.addColorStop(0, 'rgba(249,115,22,0)');
+      grad.addColorStop(1, `rgba(249,115,22,${(0.055 * a).toFixed(3)})`);
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, scanY - 100, W, 102);
+      ctx.save();
+      ctx.globalAlpha = 0.44 * a;
       ctx.strokeStyle = '#F97316';
-      ctx.lineWidth = 1;
-      ctx.setLineDash([5, 7]);
+      ctx.lineWidth   = 1;
       ctx.shadowColor = '#F97316';
-      ctx.shadowBlur = 8;
-      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
+      ctx.shadowBlur  = 10;
+      ctx.beginPath(); ctx.moveTo(0, scanY); ctx.lineTo(W, scanY); ctx.stroke();
+      ctx.restore();
+    }
+
+    function drawLabel(sig, orgP, a) {
+      if (a < 0.012) return;
+      const x   = lerp(sig.cx, sig.ox, orgP);
+      const y   = lerp(sig.cy, sig.oy, orgP);
+      const rot = lerp(sig.cr, 0, orgP);
+      ctx.save();
+      ctx.globalAlpha = a;
+      ctx.translate(x, y);
+      ctx.rotate(rot);
+      ctx.font = '500 10.5px "Plus Jakarta Sans", sans-serif';
+      const tw = ctx.measureText(sig.text).width;
+      const pw = tw + 26, ph = 22;
+      // Background pill
+      ctx.shadowColor = sig.key ? 'rgba(249,115,22,0.16)' : 'rgba(0,0,0,0.05)';
+      ctx.shadowBlur  = 7;
+      ctx.fillStyle   = sig.key ? 'rgba(255,247,237,0.92)' : 'rgba(248,250,252,0.90)';
+      if (ctx.roundRect) ctx.roundRect(-pw/2, -ph/2, pw, ph, 11);
+      else ctx.rect(-pw/2, -ph/2, pw, ph);
+      ctx.fill();
+      // Border
+      ctx.shadowBlur  = 0;
+      ctx.strokeStyle = sig.key ? 'rgba(249,115,22,0.28)' : 'rgba(100,116,139,0.18)';
+      ctx.lineWidth   = 0.75;
+      if (ctx.roundRect) ctx.roundRect(-pw/2, -ph/2, pw, ph, 11);
+      else ctx.rect(-pw/2, -ph/2, pw, ph);
+      ctx.stroke();
+      // Status dot
+      ctx.fillStyle = sig.key ? 'rgba(249,115,22,0.85)' : 'rgba(100,116,139,0.60)';
+      ctx.beginPath(); ctx.arc(-pw/2 + 10, 0, 2.5, 0, Math.PI * 2); ctx.fill();
+      // Label text
+      ctx.fillStyle = sig.key ? 'rgba(194,65,12,0.85)' : 'rgba(51,65,85,0.73)';
+      ctx.fillText(sig.text, -pw/2 + 19, 4);
+      ctx.restore();
+    }
+
+    function drawConnectors(orgP, a) {
+      if (a < 0.01 || signals.length < 2) return;
+      ctx.save();
+      ctx.strokeStyle = `rgba(100,116,139,${(a * 0.22).toFixed(3)})`;
+      ctx.lineWidth   = 0.75;
+      ctx.setLineDash([3, 7]);
+      for (let i = 0; i + 1 < signals.length; i++) {
+        const sa = signals[i], sb = signals[i + 1];
+        ctx.beginPath();
+        ctx.moveTo(lerp(sa.cx, sa.ox, orgP), lerp(sa.cy, sa.oy, orgP));
+        ctx.lineTo(lerp(sb.cx, sb.ox, orgP), lerp(sb.cy, sb.oy, orgP));
+        ctx.stroke();
+      }
       ctx.setLineDash([]);
       ctx.restore();
     }
 
-    function drawPill(text, x, y, dotC, a) {
-      if (a < 0.02) return;
-      ctx.save();
-      ctx.globalAlpha = a;
-      ctx.font = '500 10.5px "Plus Jakarta Sans", sans-serif';
-      const tw = ctx.measureText(text).width;
-      const pw = tw+26, ph = 20;
-      ctx.fillStyle = 'rgba(255,255,255,0.94)';
-      ctx.shadowColor = 'rgba(0,0,0,0.07)'; ctx.shadowBlur = 8;
-      if (ctx.roundRect) ctx.roundRect(x, y-14, pw, ph, 10);
-      else ctx.rect(x, y-14, pw, ph);
-      ctx.fill();
-      ctx.shadowBlur = 0;
-      ctx.fillStyle = rgba(dotC, 1);
-      ctx.beginPath(); ctx.arc(x+10, y-4, 3, 0, Math.PI*2); ctx.fill();
-      ctx.fillStyle = 'rgba(15,23,42,0.75)';
-      ctx.fillText(text, x+19, y-0.5);
-      ctx.restore();
+    function renderStatic() {
+      ctx.clearRect(0, 0, W, H);
+      drawGridLines(1);
+      if (signals) {
+        drawConnectors(1, 0.55);
+        signals.forEach(sig => drawLabel(sig, 1, 0.45));
+      }
     }
+
+    // ── Main loop ────────────────────────────────────────────────────
 
     function draw(ts) {
       ctx.clearRect(0, 0, W, H);
-      const t = (ts % CYCLE) / CYCLE;
-
-      // Phases: 0.00-0.05 fadein | 0.05-0.46 scan | 0.46-0.64 organize | 0.64-0.80 clarity | 0.80-1.00 fadeout
-      const scanP = sm(rng(t, 0.05, 0.46));
+      const t     = (ts % CYCLE) / CYCLE;
+      const scanP = sm(rng(t, 0.05, 0.55));
       const scanY = scanP * (H + 20);
+      const orgP  = sm(rng(t, 0.57, 0.73));
+      const gFade = t < 0.86 ? 1 : 1 - sm(rng(t, 0.86, 1.00));
 
-      if (t >= 0.05 && t < 0.46) drawScan(scanY);
+      // Grid (emerges during organize → clarity phase)
+      if (t > 0.36) drawGridLines(sm(rng(t, 0.36, 0.57)) * gFade);
 
-      grid.forEach((d, i) => {
-        const right = d.cf > 0.47;          // right side: vivid
-        const xm    = right ? 1.0 : 0.20;  // left side: very subtle
+      // Nodes
+      drawNodes(scanY, t, ts);
 
-        let color = C.base, alpha = 0;
+      // Scan line
+      if (t > 0.05 && t < 0.57) drawScanLine(scanY, t);
 
-        if (t < 0.05) {
-          alpha = 0.07 * sm(rng(t,0,0.05)) * xm;
-
-        } else if (t < 0.46) {
-          const scanned = d.y <= scanY;
-          if (scanned && issues.has(i)) {
-            const pulse = 0.50 + 0.28 * Math.sin(ts/370 + i*0.65);
-            alpha = pulse * (right ? 1 : 0.25);
-            color = C.orange;
-          } else {
-            alpha = scanned ? (right ? 0.14 : 0.07) : 0.07 * xm;
-          }
-
-        } else if (t < 0.64) {
-          const org = sm(rng(t, 0.46, 0.64));
-          const fc  = issues.has(i) ? C.orange : C.base;
-          const fa  = issues.has(i) ? (right?0.55:0.12) : 0.07*xm;
-          let tc, ta;
-          if      (d.rf < 0.33) { tc=C.orange; ta=right?0.78:0.16; }
-          else if (d.rf < 0.66) { tc=C.amber;  ta=right?0.60:0.12; }
-          else                  { tc=C.green;  ta=right?0.48:0.10; }
-          color = [lerp(fc[0],tc[0],org), lerp(fc[1],tc[1],org), lerp(fc[2],tc[2],org)];
-          alpha = lerp(fa, ta, org);
-
-        } else if (t < 0.80) {
-          const shim = 1 + 0.025*Math.sin(ts/900 + d.cf*5);
-          if      (d.rf < 0.33) { color=C.orange; alpha=(right?0.78:0.16)*shim; }
-          else if (d.rf < 0.66) { color=C.amber;  alpha=(right?0.60:0.12)*shim; }
-          else                  { color=C.green;  alpha=(right?0.48:0.10)*shim; }
-
-        } else {
-          const fade = 1 - sm(rng(t, 0.80, 0.97));
-          if      (d.rf < 0.33) { color=C.orange; alpha=(right?0.78:0.16)*fade; }
-          else if (d.rf < 0.66) { color=C.amber;  alpha=(right?0.60:0.12)*fade; }
-          else                  { color=C.green;  alpha=(right?0.48:0.10)*fade; }
+      // Labels — scatter as scan reveals, then organize
+      signals.forEach((sig, i) => {
+        let a = 0;
+        if (t >= sig.revealT && t < 0.53) {
+          a = sm(rng(t, sig.revealT, sig.revealT + 0.03)) * (1 - sm(rng(t, 0.50, 0.53)));
+        } else if (t >= 0.53 && t < 0.86) {
+          a = sm(rng(t, 0.53, 0.58));
+          if (t > 0.73) a *= 1 + 0.025 * Math.sin(ts / 2200 + i * 1.1); // gentle shimmer
+          a *= gFade;
         }
-
-        drawDot(d.x, d.y, color, alpha);
+        drawLabel(sig, orgP, a);
       });
 
+      // Connectors (appear after organize begins)
+      if (t > 0.60) drawConnectors(orgP, sm(rng(t, 0.60, 0.70)) * gFade);
+
       ctx.globalAlpha = 1;
-
-      // Pills appear bottom-left (below all content) as scan sweeps past them
-      const py  = H * 0.86;
-      const px1 = W * 0.02, px2 = W * 0.14, px3 = W * 0.28;
-
-      if (t >= 0.34 && t < 0.46) {
-        const fo = 1 - sm(rng(t, 0.43, 0.46));
-        drawPill('No owner',        px1, py, C.orange, Math.min(sm(rng(t,0.34,0.37)), fo));
-        drawPill('Missing context',  px2, py, C.orange, Math.min(sm(rng(t,0.37,0.40)), fo));
-        drawPill('Unreviewed risk',  px3, py, C.orange, Math.min(sm(rng(t,0.40,0.43)), fo));
-      }
-
-      if (t >= 0.66 && t < 0.80) {
-        const fi = sm(rng(t,0.66,0.70)), fo = 1 - sm(rng(t,0.77,0.80));
-        const la = Math.min(fi, fo);
-        drawPill('Critical · 3',  px1, py, C.orange, la);
-        drawPill('Review · 12',   px2, py, C.amber,  la);
-        drawPill('Resolved · 28', px3, py, C.green,  la);
-      }
-
       requestAnimationFrame(draw);
     }
 
-    window.addEventListener('resize', resize);
+    window.addEventListener('resize', () => { clearTimeout(window._hrT); window._hrT = setTimeout(resize, 150); });
     resize();
-    requestAnimationFrame(draw);
+    if (!REDUCED) requestAnimationFrame(draw);
   })();
   </script>
 
@@ -2093,6 +2350,7 @@
         const word    = words[wi];
         const current = deleting ? word.slice(0, ci--) : word.slice(0, ci++);
         target.textContent = current;
+        target.classList.toggle('clarity-active', current === 'clarity.');
 
         if (!deleting && ci > word.length) {
           if (wi === words.length - 1) { cursor.classList.add('done'); return; }
@@ -2112,6 +2370,98 @@
 
       setTimeout(tick, 2200);
     })();
+  </script>
+
+  <!-- ABOUT BADGE CANVAS — mini radar scan -->
+  <script>
+  (function () {
+    const canvas = document.getElementById('about-badge-canvas');
+    if (!canvas) return;
+    const ctx     = canvas.getContext('2d');
+    const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const S = 64, cx = S / 2, cy = S / 2;
+
+    // Six small signal nodes scattered around center
+    const nodes = [
+      { a: 0.4, r: 20 }, { a: 1.3, r: 16 }, { a: 2.3, r: 22 },
+      { a: 3.2, r: 17 }, { a: 4.4, r: 21 }, { a: 5.5, r: 15 },
+    ];
+
+    function drawFrame(scanAngle) {
+      ctx.clearRect(0, 0, S, S);
+
+      // Guide rings
+      [8, 16, 26].forEach(r => {
+        ctx.save();
+        ctx.strokeStyle = 'rgba(100,116,139,0.14)';
+        ctx.lineWidth = 0.75;
+        ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.stroke();
+        ctx.restore();
+      });
+
+      // Sweep trail (sector fill, fading)
+      const trailSpan = 1.1;
+      for (let i = 0; i < 16; i++) {
+        const a1 = scanAngle - trailSpan * (i / 16);
+        const a2 = scanAngle - trailSpan * ((i + 1) / 16);
+        ctx.save();
+        ctx.globalAlpha = 0.006 * (16 - i);
+        ctx.fillStyle = '#F97316';
+        ctx.beginPath();
+        ctx.moveTo(cx, cy);
+        ctx.arc(cx, cy, 28, a2, a1, false);
+        ctx.closePath();
+        ctx.fill();
+        ctx.restore();
+      }
+
+      // Active scan line
+      ctx.save();
+      ctx.globalAlpha = 0.75;
+      ctx.strokeStyle = '#F97316';
+      ctx.lineWidth = 1.5;
+      ctx.shadowColor = '#F97316';
+      ctx.shadowBlur = 5;
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.lineTo(cx + Math.cos(scanAngle) * 27, cy + Math.sin(scanAngle) * 27);
+      ctx.stroke();
+      ctx.restore();
+
+      // Center dot
+      ctx.save();
+      ctx.fillStyle = '#F97316';
+      ctx.globalAlpha = 0.9;
+      ctx.beginPath(); ctx.arc(cx, cy, 2.5, 0, Math.PI * 2); ctx.fill();
+      ctx.restore();
+
+      // Signal nodes
+      nodes.forEach(n => {
+        const nx = cx + Math.cos(n.a) * n.r;
+        const ny = cy + Math.sin(n.a) * n.r;
+        // How recently did the scan pass this node?
+        const diff = ((scanAngle - n.a) % (Math.PI * 2) + Math.PI * 2) % (Math.PI * 2);
+        const glow = diff < 0.5 ? Math.max(0, 1 - diff / 0.5) : 0;
+        ctx.save();
+        ctx.globalAlpha = 0.25 + glow * 0.65;
+        ctx.fillStyle = glow > 0.05 ? '#F97316' : 'rgba(100,116,139,1)';
+        if (glow > 0.05) { ctx.shadowColor = '#F97316'; ctx.shadowBlur = 4; }
+        ctx.beginPath(); ctx.arc(nx, ny, 2, 0, Math.PI * 2); ctx.fill();
+        ctx.restore();
+      });
+    }
+
+    if (REDUCED) {
+      drawFrame(0.8); // static snapshot
+      return;
+    }
+
+    function draw(ts) {
+      drawFrame((ts / 4200) * Math.PI * 2);
+      requestAnimationFrame(draw);
+    }
+    requestAnimationFrame(draw);
+  })();
   </script>
 
   <!-- SCROLL ANIMATION -->
